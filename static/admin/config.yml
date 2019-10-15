@@ -24,7 +24,7 @@ collections:
     files:
       - label: "About"
         name: "about"
-        file: "assets/content/pages/about.json"
+        file: "assets/content/about.json"
         fields:
           - {label: Title, name: title, widget: string}
           - {label: Intro, name: intro, widget: markdown}
@@ -35,3 +35,35 @@ collections:
               - {label: Name, name: name, widget: string}
               - {label: Position, name: position, widget: string}
               - {label: Photo, name: photo, widget: image}
+          - label: Board
+            name: board
+            widget: list
+            fields:
+              - {label: Name, name: name, widget: string}
+              - {label: Position, name: position, widget: string}
+              - {label: Photo, name: photo, widget: image}
+      - label: "Projects"
+        name: "projects"
+        file: "assets/content/projects.json"
+        fields:
+          - {label: Title, name: title, widget: string}
+          - {label: Intro, name: intro, widget: markdown}
+          - label: Projects
+            name: projects
+            widget: list
+            fields:
+              - {label: Name, name: name, widget: string}
+              - {label: Description, name: description, widget: string}
+              - {label: Logo, name: logo, widget: image}
+              - {label: Website, name: website, widget: string}
+      - label: "Supporters"
+        name: "supporters"
+        file: "assets/content/supporters.json"
+        fields:
+          - label: Supporters
+            name: supporters
+            widget: list
+            fields:
+              - {label: Name, name: name, widget: string}
+              - {label: Logo, name: logo, widget: image}
+              - {label: Website, name: website, widget: string}
