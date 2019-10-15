@@ -40,8 +40,10 @@ export default {
   /*
   ** Nuxt.js modules
   */
-  modules: [
-  ],
+  modules: ['@nuxtjs/markdownit'],
+  markdownit: {
+    injected: true,
+  },
   /*
   ** Build configuration
   */
@@ -51,5 +53,19 @@ export default {
     */
     extend (config, ctx) {
     }
-  }
+  },
+  /*
+  ** Dynamic page generation
+  */
+  generate: {
+    routes: function() {
+      const fs = require('fs');
+      return fs.readdirSync('./assets/content/jobs').map(file => {
+        return {
+          route: `/jobs/${file.slice(2, -5)}`, // Remove the .json from the end of the filename
+          payload: require(`./assets/content/jobs/${file}`),
+        };
+      });
+    },
+  },
 }
