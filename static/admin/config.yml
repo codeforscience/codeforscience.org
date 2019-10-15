@@ -24,7 +24,7 @@ collections:
     files:
       - label: "About"
         name: "about"
-        file: "site/content/about.json"
+        file: "site/content/pages/about.json"
         fields:
           - {label: Title, name: title, widget: string}
           - {label: Intro, name: intro, widget: markdown}
