@@ -1,3 +1,12 @@
 {
-  "title": "About Code for Science & Society"
+  "title": "About Code for Science & Society",
+  "intro": "CS&S Projects",
+  "projects": [
+    {
+      "name": "Dat Foundation",
+      "description": "Dat",
+      "logo": "/img/dat-logo.png",
+      "website": "https://dat.foundation"
+    }
+  ]
 }
