@@ -1,3 +1,11 @@
 {
-  "title": "About Code for Science & Society"
+  "title": "About Code for Science & Society",
+  "intro": " About CSS",
+  "team": [
+    {
+      "name": "Joe Hand",
+      "position": "Co-Executive Director",
+      "photo": "/img/hand-icon.png"
+    }
+  ]
 }
