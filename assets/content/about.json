@@ -1,11 +1,41 @@
 {
-  "title": "About Code for Science & Society",
-  "intro": " About CSS",
   "team": [
+    {
+      "name": "Danielle Robinson, PhD",
+      "position": "President & Co-Executive Director",
+      "description": "Danielle Robinson is a proven community leader and strategic advisor to researchers, librarians, and tech communities innovating in research and open source. In 2016, she completed a PhD in Neuroscience at Oregon Health & Science University, during which time was a NSF Graduate Research Fellow and advocated for policies that supported open access on campus. As a 2016 Mozilla Fellow for Science, she ran open source project management workshops around the world, explored decentralized approaches to data preservation. She now focuses on developing infrastructure to expand and protect open access to knowledge as Co-Executive Director of Code for Science & Society."
+    },
     {
       "name": "Joe Hand",
       "position": "Co-Executive Director",
-      "photo": "/img/hand-icon.png"
+      "description": "Joe Hand is Co-Executive Director at Code for Science & Society and a core developer on Dat Project with a focus on developing and managing data-focused programs for researchers and community-driven organizations. Previously, Joe managed a global project at the Santa Fe Institute to transform data collection practices of an international NGO, operating in slums across 30 countries in the Global South."
+    }
+  ],
+  "board": [
+    {
+      "name": "Kaitlin Thaney",
+      "position": "Board Chair",
+      "description": "Endowment Director at Wikimedia Foundation and an experienced advocate for open access to content, data, research."
+    },
+    {
+      "name": "Karissa McKelvey",
+      "position": "Board Member",
+      "description": "Co-founder of CS&S, Technology and Partnerships at Digital Democracy, Project Director at the Dat Project. Open source software developer, writer, project manager, and activist supporting an equitable web."
+    },
+    {
+      "name": "Kristen Ratan",
+      "position": "Board Member",
+      "description": "Co-Founder of the Collaborative Knowledge Foundation, on a mission to evolve how knowledge is created, produced, and shared."
+    },
+    {
+      "name": "Waldo Jaquith",
+      "position": "Board Member",
+      "description": "Technical lead in 18F Acquisitions' state and local practice, previously Director of U.S. Open Data, Shuttleworth Foundation Fellow, and member of Project Open Data advisory team."
+    },
+    {
+      "name": "Josh Greenberg, PhD",
+      "position": "Board Advisor",
+      "description": "Director of the Alfred P. Sloan Foundation's Digital Information Technology program."
     }
   ]
 }

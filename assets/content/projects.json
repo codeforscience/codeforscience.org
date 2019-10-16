@@ -1,12 +1,40 @@
 {
-  "title": "About Code for Science & Society",
-  "intro": "CS&S Projects",
   "projects": [
     {
       "name": "Dat Foundation",
-      "description": "Dat",
+      "description": "A community-driven, peer-to-peer protocol powering a next generation web.",
       "logo": "/img/dat-logo.png",
       "website": "https://dat.foundation"
+    },
+    {
+      "website": "https://stenci.la/",
+      "logo": "/img/stencila.png",
+      "name": "Stencila",
+      "description": "The office suite for reproducible research."
+    },
+    {
+      "website": "http://prereview.org",
+      "logo": "/img/prereview.png",
+      "name": "PREreview",
+      "description": "PREreview trains early career researchers in peer review through preprints."
+    },
+    {
+      "website": "https://openreview.net/",
+      "name": "OpenReview",
+      "logo": "/img/openreview.png",
+      "description": "Opening peer review."
+    },
+    {
+      "website": "https://www.measurementlab.net/",
+      "logo": "/img/mlab.png",
+      "name": "Measurement Lab",
+      "description": "Measure the Internet, save the data, and make it universally accessible and useful."
+    },
+    {
+      "website": "https://investinopen.org/",
+      "logo": "/img/ioi-temp-logo.png",
+      "name": "Invest in Open Infrastructure",
+      "description": "A effort to enable open scientific and scholarly infrastructure on a global scale."
     }
   ]
 }
