@@ -6,6 +6,44 @@ media_folder: static/img
 public_folder: /img
 
 collections:
+  # Pages
+  - label: 'Pages: About'
+    name: 'about'
+    files:
+      - label: 'People'
+        name: 'People'
+        file: 'assets/content/pages/about.json'
+        fields:
+          - {label: Title, name: title, widget: string}
+          - label: 'Sections'
+            name: 'section'
+            widget: 'list'
+            fields:
+              - {label: Section Name, name: name, widget: string}
+              - {label: 'Description', name: 'description', widget: 'markdown', buttons: ['link']}
+              - label: "People"
+                name: "people"
+                widget: "relation"
+                collection: "people"
+                searchFields: ["name"]
+                multiple: true
+                valueField: "name"
+                displayFields: ["name"]
+
+  - label: 'Collection: People'
+    name: 'people'
+    identifier_field: 'name'
+    folder: 'assets/content/people'
+    create: true
+    slug: "{{name}}"
+    fields:
+      - {label: 'Name', name: 'name', widget: 'string', hint: 'First and last name; required.', required: true}
+      - {label: 'Title', name: 'title', widget: 'string', required: true}
+      - {label: 'Bio', name: 'bio', widget: 'markdown', buttons: ['link'], required: false}
+      - {label: 'Image', name: 'image', widget: 'image', required: false }
+      - {label: 'Image Alt Text', name: 'imageAltText', widget: 'string', required: false, hint: "Briefly describe the image; this will be read by screen readers." }
+      - {label: 'Website', name: 'website', widget: 'string', required: false, hint: 'If this is present, both image and name will link there.', pattern: ['^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/|dat:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$', hint: 'Must be a valid URL.']}
+
   - name: 'Jobs'
     label: 'Jobs'
     folder: 'assets/content/jobs'
@@ -28,9 +66,9 @@ collections:
         file: 'assets/content/content.json'
         fields:
           - { label: 'Title', name: 'title', widget: 'string' }
-      - label: 'About'
-        name: 'about'
-        file: 'assets/content/about.json'
+      - label: 'People'
+        name: 'people'
+        file: 'assets/content/people.json'
         fields:
           - label: Team
             name: team

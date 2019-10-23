@@ -23,7 +23,7 @@ export default {
       return { job: payload }
     } else {
       return {
-        job: await require(`~/assets/content/jobs/${params.jobs}.json`)
+        job: await require(`~/assets/content/jobs/${params.job}.json`)
       }
     }
   }

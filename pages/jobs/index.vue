@@ -9,7 +9,9 @@
           <h4>Currently Hiring:</h4>
           <ul>
             <li v-for="(job, index) of jobs" :key="index">
-              <a :href="`/jobs/${job.slug}`">{{ job.title }}</a>
+              <nuxt-link :to="{ name: 'jobs-job', params: { job: job.slug }}">
+                {{ job.title }}
+              </nuxt-link>
             </li>
           </ul>
         </div>
@@ -23,8 +25,8 @@
       <article v-for="(job, index) of jobs" :key="index" class="ph3 ph5-l pb4">
         <h3>{{ job.title }}</h3>
         <div class="f4 lh-copy" v-html="$md.render(job.description)" />
-        <a
-          :href="`/jobs/${job.slug}`"
+        <nuxt-link
+          :to="{ name: 'jobs-job', params: { job: job.slug }}"
           class="f5 no-underline black bg-animate hover-bg-black
             hover-white dib items-center pa2 ba border-box"
         >
@@ -38,7 +40,7 @@
             <title>chevronRight icon</title>
             <path d="M12 1 L26 16 L12 31 L8 27 L18 16 L8 5 z" />
           </svg>
-        </a>
+        </nuxt-link>
       </article>
     </div>
     <div class="ph3 ph5-l pt3 pb5">
