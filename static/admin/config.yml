@@ -6,6 +6,34 @@ media_folder: static/img
 public_folder: /img
 
 collections:
+  # Globals
+  - name: globals
+    label: Globals
+    files:
+      - label: 'Content'
+        name: 'content'
+        file: 'assets/content/content.json'
+        fields:
+          - { label: 'Title', name: 'title', widget: 'string' }
+      - file: assets/content/globals/navigation.json
+        label: Navigation
+        name: navigation
+        fields:
+          - label: Navigation
+            name: nav_items
+            widget: list
+            fields:
+              - {label: Label, name: label, widget: string}
+              - {label: Path, name: path, widget: string, required: false, hint: 'Leave this blank if this item has no landing page or children.'}
+              - {label: 'External', name: 'external', widget: 'boolean', hint: 'Set to external to handle external links without using the router.', required: false, default: false}
+              - label: Secondary items
+                name: secondary
+                widget: list
+                fields:
+                  - {label: Label, name: label, widget: string}
+                  - {label: Path, name: path, widget: string}
+                  - {label: 'External', name: 'external', widget: 'boolean', hint: 'Set to external to handle external links without using the router.', required: false, default: false}
+
   # Pages
   - label: 'Pages: About'
     name: 'about'
@@ -62,11 +90,6 @@ collections:
   - label: 'Pages'
     name: 'pages'
     files:
-      - label: 'Content'
-        name: 'content'
-        file: 'assets/content/content.json'
-        fields:
-          - { label: 'Title', name: 'title', widget: 'string' }
       - label: 'People'
         name: 'people'
         file: 'assets/content/people.json'
