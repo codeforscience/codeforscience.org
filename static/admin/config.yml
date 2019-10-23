@@ -15,11 +15,11 @@ collections:
         file: 'assets/content/pages/about.json'
         fields:
           - {label: Title, name: title, widget: string}
-          - label: 'Sections'
-            name: 'section'
+          - label: 'Group'
+            name: 'group'
             widget: 'list'
             fields:
-              - {label: Section Name, name: name, widget: string}
+              - {label: 'Group Name', name: name, widget: string}
               - {label: 'Description', name: 'description', widget: 'markdown', buttons: ['link']}
               - label: "People"
                 name: "people"
