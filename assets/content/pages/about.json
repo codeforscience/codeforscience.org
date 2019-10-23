@@ -1,9 +1,9 @@
 {
   "title": "About Code for Science & Society",
-  "section": [
+  "group": [
     {
-      "name": "CS&S Leadership",
-      "description": "Leadership of CS&S.",
+      "name": "Leadership",
+      "description": "Directors of CSS",
       "people": [
         "Joe Hand"
       ]
