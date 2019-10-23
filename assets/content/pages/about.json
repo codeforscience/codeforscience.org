@@ -1,3 +1,12 @@
 {
-  "title": "About Code for Science & Society"
+  "title": "About Code for Science & Society",
+  "section": [
+    {
+      "name": "CS&S Leadership",
+      "description": "Leadership of CS&S.",
+      "people": [
+        "Joe Hand"
+      ]
+    }
+  ]
 }
