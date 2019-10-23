@@ -35,6 +35,7 @@ collections:
     identifier_field: 'name'
     folder: 'assets/content/people'
     create: true
+    format: 'json'
     slug: "{{name}}"
     fields:
       - {label: 'Name', name: 'name', widget: 'string', hint: 'First and last name; required.', required: true}
