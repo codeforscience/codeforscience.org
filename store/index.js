@@ -1,18 +1,22 @@
 export const state = () => ({
   jobs: [],
   pages: [],
-  content: {}
+  globals: {},
+  people: []
 })
 
 export const mutations = {
   setJobs (state, list) {
     state.jobs = list
   },
+  setPeople (state, list) {
+    state.people = list
+  },
   setPages (state, pages) {
     state.pages = pages
   },
-  setContent (state, content) {
-    state.content = content
+  setGlobals (state, globals) {
+    state.globals = globals
   }
 }
 
@@ -26,7 +30,15 @@ export const actions = {
     })
     await commit('setJobs', jobs)
 
-    const pageFiles = await require.context('~/assets/content/', false, /\.json$/)
+    const peopleFiles = await require.context('~/assets/content/people/', false, /\.json$/)
+    const peoples = peopleFiles.keys().map((key) => {
+      const res = peopleFiles(key)
+      res.slug = key.slice(2, -5)
+      return res
+    })
+    await commit('setPeople', peoples)
+
+    const pageFiles = await require.context('~/assets/content/pages/', false, /\.json$/)
     const pages = pageFiles.keys().map((key) => {
       const res = pageFiles(key)
       res.slug = key.slice(2, -5)
@@ -35,6 +47,10 @@ export const actions = {
     await commit('setPages', pages)
 
     const content = await require('~/assets/content/content.json')
-    await commit('setContent', content)
+    const globalFiles = await require.context('~/assets/content/globals/', false, /\.json$/)
+    globalFiles.keys().map((key) => {
+      content[key.slice(2, -5)] = globalFiles(key)
+    })
+    await commit('setGlobals', content)
   }
 }

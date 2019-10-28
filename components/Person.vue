@@ -1,12 +1,41 @@
 <template>
-  <div class="VueToNuxtLogo">
-    <div class="Triangle Triangle--two" />
-    <div class="Triangle Triangle--one" />
-    <div class="Triangle Triangle--three" />
-    <div class="Triangle Triangle--four" />
-  </div>
+  <article
+    class="mw6 center bg-white br3 pa3 pa4-ns mv3 ba b--black-10"
+  >
+    <div class="tc">
+      <img
+        :src="person.image"
+        class="br-100 h4 w4 dib ba b--black-05 pa2"
+        :title="person.name"
+        style="object-fit:cover;"
+      >
+      <h1 class="f3 mb2">
+        {{ person.name }}
+      </h1>
+      <h2 class="f5 fw4 gray mt0">
+        {{ person.title }}
+      </h2>
+    </div>
+    <p class="lh-copy measure center f6 black-70">
+      {{ person.bio }}
+    </p>
+  </article>
 </template>
 
-<style>
-
-</style>
+<script>
+export default {
+  name: 'Person',
+  props: {
+    name: {
+      type: String,
+      required: false
+    }
+  },
+  computed: {
+    person (name) {
+      return this.$store.state.people
+        .filter(x => x.name === this.name)[0]
+    }
+  }
+}
+</script>

@@ -1,5 +1,21 @@
 <template>
   <div class="bg-lightest-blue pa3 ph5-l">
+    <section
+        v-for="group of page.group"
+        :key="group.name"
+        class="flex flex-wrap">
+      <h3 class="f2 db w-100">
+        {{ group.name }}
+      </h3>
+      <h5 class="f5 db w-100">
+        {{ group.description }}
+      </h5>
+      <person
+        v-for="person in group.people"
+        :key="person"
+        :name="person"
+      />
+    </section>
     <section class="flex flex-wrap">
       <h3 class="f2 db w-100">
         CS&amp;S Leadership
@@ -60,7 +76,12 @@
 </style>
 
 <script>
+import Person from '~/components/Person.vue'
+
 export default {
+  components: {
+    Person
+  },
   computed: {
     page () {
       const route = this.$route.name

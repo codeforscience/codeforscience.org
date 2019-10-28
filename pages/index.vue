@@ -3,10 +3,10 @@
     <div>
       <logo />
       <h1 class="title">
-        {{ content.title }}
+        {{ globals.title }}
       </h1>
       <h2 class="subtitle">
-        {{ content.subtitle }}
+        {{ globals.subtitle }}
       </h2>
       <div class="links">
         <a
@@ -36,8 +36,8 @@ export default {
     Logo
   },
   computed: {
-    content () {
-      return this.$store.state.content
+    globals () {
+      return this.$store.state.globals
     }
   }
 }

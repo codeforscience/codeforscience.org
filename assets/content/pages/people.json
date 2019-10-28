@@ -1,0 +1,24 @@
+{
+  "title": "About Code for Science & Society",
+  "group": [
+    {
+      "name": "Leadership",
+      "description": "Directors of CSS",
+      "people": [
+        "Joe Hand",
+        "Danielle Robinson, PhD"
+      ]
+    },
+    {
+      "name": "Board of Directors",
+      "description": "CS&S Board",
+      "people": [
+        "Kaitlin Thaney",
+        "Karissa McKelvey",
+        "Kristen Ratan",
+        "Waldo Jaquith",
+        "Josh Greenberg, PhD"
+      ]
+    }
+  ]
+}
