@@ -24,8 +24,7 @@ const generateRoutes = async () => {
   ** get pages
   */
   const pages = await api.pages.browse({
-    limit: 'all',
-    include: 'authors,tags'
+    limit: 'all'
   })
 
   pages.forEach((page) => {

@@ -1,3 +1,4 @@
+import { generateRoutes } from './util/ghost'
 require('dotenv').config()
 
 export default {
@@ -52,7 +53,7 @@ export default {
     siteUrl: process.env.SITE_URL
   },
   markdownit: {
-    injected: true,
+    injected: true
   },
   /*
   ** Build configuration
@@ -69,14 +70,15 @@ export default {
   */
   generate: {
     subFolders: false,
-    routes: function() {
-      const fs = require('fs');
-      return fs.readdirSync('./assets/content/jobs').map(file => {
+    async routes () {
+      await generateRoutes()
+      const fs = require('fs')
+      return fs.readdirSync('./assets/content/jobs').map((file) => {
         return {
           route: `/jobs/${file.slice(2, -5)}`, // Remove the .json from the end of the filename
-          payload: require(`./assets/content/jobs/${file}`),
-        };
-      });
-    },
-  },
+          payload: require(`./assets/content/jobs/${file}`)
+        }
+      })
+    }
+  }
 }
