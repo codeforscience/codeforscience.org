@@ -71,14 +71,16 @@ export default {
   generate: {
     subFolders: false,
     async routes () {
-      await generateRoutes()
+      const routes = await generateRoutes()
       const fs = require('fs')
-      return fs.readdirSync('./assets/content/jobs').map((file) => {
-        return {
+      fs.readdirSync('./assets/content/jobs').map((file) => {
+        if (file.indexOf('.json') < 0) return
+        routes.push({
           route: `/jobs/${file.slice(2, -5)}`, // Remove the .json from the end of the filename
           payload: require(`./assets/content/jobs/${file}`)
-        }
+        })
       })
+      return routes
     }
   }
 }
