@@ -1,8 +1,11 @@
+import { ghostAPI } from '@/util/ghost'
+
 export const state = () => ({
   jobs: [],
   pages: [],
   globals: {},
-  people: []
+  people: [],
+  siteSettings: null
 })
 
 export const mutations = {
@@ -17,11 +20,14 @@ export const mutations = {
   },
   setGlobals (state, globals) {
     state.globals = globals
+  },
+  setSiteSettings (state, siteSettings) {
+    state.siteSettings = siteSettings
   }
 }
 
 export const actions = {
-  async nuxtServerInit ({ commit }) {
+  async nuxtServerInit ({ commit }, { error }) {
     const jobFiles = await require.context('~/assets/content/jobs/', false, /\.json$/)
     const jobs = jobFiles.keys().map((key) => {
       const res = jobFiles(key)
@@ -52,5 +58,15 @@ export const actions = {
       content[key.slice(2, -5)] = globalFiles(key)
     })
     await commit('setGlobals', content)
+
+    // get site settings from ghost
+    try {
+      const settings = await ghostAPI().settings.browse()
+      commit('setSiteSettings', settings)
+    } catch (e) {
+      // since this is server init, the error would be a server error
+      error({ statusCode: 500, message: e.message })
+      throw e
+    }
   }
 }

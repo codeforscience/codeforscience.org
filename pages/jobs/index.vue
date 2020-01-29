@@ -14,12 +14,12 @@
               </nuxt-link>
             </li>
           </ul>
+          <hr>
         </div>
         <div v-else class="f5 f4-ns fw4 measure">
           <h4>No open positions.</h4>
         </div>
       </div>
-      <hr>
     </div>
     <div class="">
       <article v-for="(job, index) of jobs" :key="index" class="ph3 ph5-l pb4">

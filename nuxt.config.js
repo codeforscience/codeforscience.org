@@ -1,3 +1,4 @@
+require('dotenv').config()
 
 export default {
   mode: 'universal',
@@ -40,7 +41,16 @@ export default {
   /*
   ** Nuxt.js modules
   */
-  modules: ['@nuxtjs/markdownit'],
+  modules: [
+    '@nuxtjs/markdownit',
+    '@nuxtjs/dotenv'
+  ],
+  env: {
+    // loaded from .env file locally and from netlify in deployment
+    ghostUri: process.env.GHOST_URI,
+    ghostKey: process.env.GHOST_KEY,
+    siteUrl: process.env.SITE_URL
+  },
   markdownit: {
     injected: true,
   },
@@ -58,6 +68,7 @@ export default {
   ** Dynamic page generation
   */
   generate: {
+    subFolders: false,
     routes: function() {
       const fs = require('fs');
       return fs.readdirSync('./assets/content/jobs').map(file => {

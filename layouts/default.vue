@@ -41,9 +41,9 @@ export default {
           <nuxt-link to="/people" class="link dim black-70 dib mr3" title="People">
             People
           </nuxt-link>
-          <nuxt-link to="/jobs" class="link dim black-70 dib mr3" title="Store">
+          <!-- <nuxt-link to="/jobs" class="link dim black-70 dib mr3" title="Store">
             Jobs
-          </nuxt-link>
+          </nuxt-link> -->
           <nuxt-link to="/contact" class="link dim black-70 dib" title="Contact">
             Contact
           </nuxt-link>

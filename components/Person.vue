@@ -12,11 +12,11 @@
       <h1 class="f3 mb2">
         {{ person.name }}
       </h1>
-      <h2 class="f5 fw4 gray mt0">
+      <h2 class="f5 fw5 black-70 mt0">
         {{ person.title }}
       </h2>
     </div>
-    <p class="lh-copy measure center f6 black-70">
+    <p class="lh-copy measure center f5 black-70">
       {{ person.bio }}
     </p>
   </article>
@@ -28,7 +28,8 @@ export default {
   props: {
     name: {
       type: String,
-      required: false
+      required: false,
+      default: ''
     }
   },
   computed: {

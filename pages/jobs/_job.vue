@@ -1,6 +1,6 @@
 <template>
   <section class="min-vh-100 bl b--black-10 flex flex-column black-70 w-100">
-    <div class="ph3 ph5-l pt2 pb5 mw8">
+    <div class="ph3 ph5-l pv5 mw7 lh-copy">
       <h1>{{ job.title }}</h1>
       <div class="f4 lh-copy" v-html="$md.render(job.description)" />
       <div v-html="$md.render(job.body)" />

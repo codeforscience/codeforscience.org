@@ -67,11 +67,25 @@ collections:
     slug: "{{name}}"
     fields:
       - {label: 'Name', name: 'name', widget: 'string', hint: 'First and last name; required.', required: true}
-      - {label: 'Title', name: 'title', widget: 'string', required: true}
+      - {label: 'Title', name: 'title', widget: 'string', required: false}
       - {label: 'Bio', name: 'bio', widget: 'markdown', buttons: ['link'], required: false}
       - {label: 'Image', name: 'image', widget: 'image', required: false }
       - {label: 'Image Alt Text', name: 'imageAltText', widget: 'string', required: false, hint: "Briefly describe the image; this will be read by screen readers." }
       - {label: 'Website', name: 'website', widget: 'string', required: false, hint: 'If this is present, both image and name will link there.', pattern: ['^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/|dat:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$', hint: 'Must be a valid URL.']}
+
+  - label: 'Collection: Projects'
+    name: 'project'
+    identifier_field: 'name'
+    folder: 'assets/content/projects'
+    create: true
+    format: 'json'
+    slug: "{{name}}"
+    fields:
+      - {label: 'Name', name: 'name', widget: 'string', hint: 'First and last name; required.', required: true}
+      - {label: 'Description', name: 'bio', widget: 'markdown', buttons: ['link'], required: false}
+      - {label: 'Logo', name: 'logo', widget: 'image', required: true }
+      - {label: 'Logo Alt Text', name: 'logoAltText', widget: 'string', required: false, hint: "Briefly describe the image; this will be read by screen readers." }
+      - {label: 'Website', name: 'website', widget: 'string', required: true, hint: 'If this is present, both image and name will link there.', pattern: ['^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/|dat:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$', hint: 'Must be a valid URL.']}
 
   - name: 'Jobs'
     label: 'Jobs'
@@ -87,48 +101,3 @@ collections:
       - { label: 'Short Description', name: 'description', widget: 'markdown' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
       - { label: 'Use Airtable Form', name: 'useForm', widget: 'boolean', default: true }
-  - label: 'Pages'
-    name: 'pages'
-    files:
-      - label: 'People'
-        name: 'people'
-        file: 'assets/content/people.json'
-        fields:
-          - label: Team
-            name: team
-            widget: list
-            fields:
-              - {label: Name, name: name, widget: string}
-              - {label: Position, name: position, widget: string}
-              - {label: Description, name: description, widget: string}
-              - {label: Photo, name: photo, widget: image}
-          - label: Board
-            name: board
-            widget: list
-            fields:
-              - {label: Name, name: name, widget: string}
-              - {label: Position, name: position, widget: string}
-              - {label: Photo, name: photo, widget: image}
-      - label: 'Projects'
-        name: 'projects'
-        file: 'assets/content/projects.json'
-        fields:
-          - label: Projects
-            name: projects
-            widget: list
-            fields:
-              - {label: Name, name: name, widget: string}
-              - {label: Description, name: description, widget: markdown}
-              - {label: Logo, name: logo, widget: image}
-              - {label: Website, name: website, widget: string}
-      - label: 'Supporters'
-        name: 'supporters'
-        file: 'assets/content/supporters.json'
-        fields:
-          - label: Supporters
-            name: supporters
-            widget: list
-            fields:
-              - {label: Name, name: name, widget: string}
-              - {label: Logo, name: logo, widget: image}
-              - {label: Website, name: website, widget: string}

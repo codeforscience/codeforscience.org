@@ -1,103 +1,66 @@
 <template>
-  <div class="container">
-    <div>
-      <logo />
-      <h1 class="title">
-        {{ globals.title }}
-      </h1>
-      <h2 class="subtitle">
-        {{ globals.subtitle }}
-      </h2>
-      <div class="links">
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+  <div>
+    <section class="bl b--black-10 flex flex-column black-70">
+      <div class="cover bg-center" style="background-image:url('/img/background.jpg')">
+        <div class="bt b--black-10 ph3 ph5-l pb4 pb5-ns pt2 bg-black-60 w-100 vh-75 dt">
+          <div class="tc dtc v-mid">
+            <h1 class="f2 f1-l fw2 mw7 ph5 center white-90 mb0 lh-title">
+              {{ globals.tagline }}
+            </h1>
+            <h2 class="f5 f4-ns fw5 measure-wide center white-80 mt3 mb4">
+              {{ globals.description }}
+            </h2>
+          </div>
+        </div>
       </div>
-    </div>
+      <div class="bt b--black-10 ph3 ph5-l pb4 pb5-ns pt2">
+        <h3 class="f2 ttu fw5">
+          Latest News
+        </h3>
+        <div class="f5 f4-ns fw4 cf">
+          <div v-if="featuredPost.feature_image" class="card-image">
+            <figure class="image">
+              <img :src="featuredPost.feature_image" alt="Placeholder image">
+            </figure>
+          </div>
+          <div class="card-content">
+            <div class="content">
+              <h3 class="is-title has-text-centered">
+                {{ featuredPost.title }}
+              </h3>
+            </div>
+            <div class="content" v-html="featuredPost.excerpt" />
+          </div>
+          <p>{{ featuredPost }}</p>
+        </div>
+      </div>
+    </section>
   </div>
 </template>
 
 <script>
-import Logo from '~/components/Logo.vue'
+import { ghostAPI } from '@/util/ghost'
 
 export default {
-  components: {
-    Logo
+  async asyncData () {
+    const posts = await ghostAPI().posts.browse({
+      filter: 'featured:true'
+    })
+    const featuredPost = posts[0]
+    return {
+      featuredPost
+    }
   },
   computed: {
     globals () {
       return this.$store.state.globals
+    },
+    siteSettings () {
+      return this.$store.state.siteSettings
     }
   }
 }
 </script>
 
 <style>
-.container {
-  margin: 0 auto;
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
-.title {
-  font-family: 'Quicksand', 'Source Sans Pro', -apple-system, BlinkMacSystemFont,
-    'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
-  display: block;
-  font-weight: 300;
-  font-size: 100px;
-  color: #35495e;
-  letter-spacing: 1px;
-}
-
-.subtitle {
-  font-weight: 300;
-  font-size: 42px;
-  color: #526488;
-  word-spacing: 5px;
-  padding-bottom: 15px;
-}
-
-.links {
-  padding-top: 15px;
-}
-
-.button--green {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #3b8070;
-  color: #3b8070;
-  text-decoration: none;
-  padding: 10px 30px;
-}
-.button--green:hover {
-  color: #fff;
-  background-color: #3b8070;
-}
-.button--grey {
-  display: inline-block;
-  border-radius: 4px;
-  border: 1px solid #35495e;
-  color: #35495e;
-  text-decoration: none;
-  padding: 10px 30px;
-  margin-left: 15px;
-}
-.button--grey:hover {
-  color: #fff;
-  background-color: #35495e;
-}
 </style>
