@@ -1,9 +1,11 @@
 <template>
   <article
+    v-if="person"
     class="mw6 center bg-white br3 pa3 pa4-ns mv3 ba b--black-10"
   >
     <div class="tc">
       <img
+        v-if="person.image"
         :src="person.image"
         class="br-100 h4 w4 dib ba b--black-05 pa2"
         :title="person.name"
@@ -16,9 +18,11 @@
         {{ person.title }}
       </h2>
     </div>
-    <p class="lh-copy measure center f5 black-70">
-      {{ person.bio }}
-    </p>
+    <div
+      v-if="person.bio"
+      class="lh-copy measure center f5 black-70"
+      v-html="$md.render(person.bio)"
+    />
   </article>
 </template>
 
