@@ -1,0 +1,18 @@
+[[redirects]]
+  from = "http://blog.codeforscience.org/*"
+  to = "https://codeforscience.org/blog/:splat"
+  status = 301
+  force = true
+  
+[[redirects]]
+  from = "https://blog.codeforscience.org/*"
+  to = "https://codeforscience.org/blog/:splat"
+  status = 301
+  force = true 
+  
+[[redirects]]
+  from = "/blog/*"
+  to = "https://codeforscience.org/blog/:splat"
+  status = 200
+  force = true 
+  headers = {X-Forwarded-Host = "codeforscience.org"}
