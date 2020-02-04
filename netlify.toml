@@ -1,12 +1,12 @@
 [[redirects]]
-  from = "http://blog.codeforscience.org/*"
-  to = "https://css-new.netlify.com/blog/:splat"
+  from = "http://css-new.netlify.com/blog/*"
+  to = "https://blog.codeforscience.org/:splat"
   status = 301
   force = true
   
 [[redirects]]
-  from = "https://blog.codeforscience.org/*"
-  to = "https://css-new.netlify.com/blog/:splat"
+  from = "http://css-new.netlify.com/blog/*"
+  to = "https://blog.codeforscience.org/:splat"
   status = 301
   force = true 
   
