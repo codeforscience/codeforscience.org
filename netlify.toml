@@ -1,6 +1,6 @@
 [[redirects]]
   from = "/blog/*"
   to = "https://blog.codeforscience.org/:splat"
-  status = 301
+  status = 200
   force = true
   headers = {X-Forwarded-Host = "css-new.netlify.com"}
