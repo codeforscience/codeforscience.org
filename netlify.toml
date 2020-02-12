@@ -4,3 +4,8 @@
   status = 200
   force = true
   headers = {X-Forwarded-Host = "css-new.netlify.com"}
+[[redirects]]
+  from = "/donate/*"
+  to = "https://donate.codeforscience.org/:splat"
+  status = 200
+  force = true
