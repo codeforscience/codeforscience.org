@@ -1,10 +1,10 @@
 <template>
   <section class="lh-copy mw8">
     <div class="pa3 ph5-l">
-      <h1 class="f2 db w-100 mb2">
+      <h2 class="ph3 ph0-l f2 ttu fw5">
         {{ page.title }}
-      </h1>
-      <article ref="pageContent" class="" v-html="page.html" />
+      </h2>
+      <article ref="pageContent" class="lh-copy measure-wide" v-html="page.html" />
     </div>
   </section>
 </template>
