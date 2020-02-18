@@ -3,6 +3,12 @@ export default {
   computed: {
     globals () {
       return this.$store.state.globals
+    },
+    ghostSettings () {
+      return this.$store.state.ghostSettings
+    },
+    showJobs () {
+      return this.$store.state.jobs && this.$store.state.jobs.length
     }
   }
 }
@@ -10,16 +16,34 @@ export default {
 
 <template>
   <main class="relative flex flex-wrap">
-    <header class="bb bn-l b--black-10 w-20-l w-100 vh-100-l pa3 pa4-l pl3-l top-0 sticky-l">
+    <header class="bb bn-l b--black-10 w-100 w-20-l vh-100-l pa3 pa4-l pl3-l top-0 sticky-l">
       <div class="flex flex-column-l justify-between mw-100">
-        <a href="/" class="dim flex-none-l items-center mw-100 mw5">
-          <img :src="globals.logo" :title="globals.title" class=" mw-100-l mw5">
-        </a>
+        <nuxt-link to="/" class="dim flex-none-l items-center mw-100 mw5">
+          <img :src="globals.logo" :title="ghostSettings.title" class=" mw-100-l mw5s">
+        </nuxt-link>
         <h3 class="f5 f4-ns fw4 bt b--gray pv3-l pv2 mw5 dn db-l">
-          {{ globals.subtitle }}
+          {{ ghostSettings.description }}
         </h3>
       </div>
-
+      <header class="w-100 pv3 pv4-ns">
+        <nav class="f4 fw6 mw5">
+          <nuxt-link to="/about" class="pt2 lh-copy link dim black-70 db mr3 ba bl-0 bt-0 br-0 b--dotted b--black-30" title="About">
+            About
+          </nuxt-link>
+          <nuxt-link to="/people" class="pt2 lh-copy link dim black-70 db ba bl-0 bt-0 br-0 b--dotted b--black-30" title="People">
+            People
+          </nuxt-link>
+          <nuxt-link to="/projects" class="mr3 pt2 lh-copy link dim black-70 db ba bl-0 bt-0 br-0 b--dotted b--black-30" title="Projects">
+            Projects
+          </nuxt-link>
+          <nuxt-link v-if="showJobs" to="/jobs" class="pt2 lh-copy link dim black-70 db ba bl-0 bt-0 br-0 b--dotted b--black-30" title="Jobs">
+            Jobs
+          </nuxt-link>
+          <nuxt-link to="/resources" class="pt2 lh-copy link dim black-70 db ba bl-0 bt-0 br-0 b--dotted b--black-30" title="View All Pages">
+            More...
+          </nuxt-link>
+        </nav>
+      </header>
       <footer class="absolute bottom-0 mb4 black-70 dn db-l">
         <a :href="`mailto:${globals.contact.email}`" class="link fw6 f4 dim black-70 lh-solid">
           {{ globals.contact.email }}
@@ -29,30 +53,9 @@ export default {
         </a>
       </footer>
     </header>
-    <section class="min-vh-100-l w-100 w-80-l lh-copy bl b--black-10">
-      <header class="bg-white b--black-10 bb fixed w-100 ph3 pv3 pv4-ns ph4-m ph5-l">
-        <nav class="f4 fw6">
-          <nuxt-link to="/" class="link dim black-70 dib mr3" title="Home">
-            Home
-          </nuxt-link>
-          <nuxt-link to="/about" class="link dim black-70 dib mr3" title="About">
-            About
-          </nuxt-link>
-          <nuxt-link to="/people" class="link dim black-70 dib mr3" title="People">
-            People
-          </nuxt-link>
-          <!-- <nuxt-link to="/jobs" class="link dim black-70 dib mr3" title="Store">
-            Jobs
-          </nuxt-link> -->
-          <nuxt-link to="/contact" class="link dim black-70 dib" title="Contact">
-            Contact
-          </nuxt-link>
-        </nav>
-      </header>
-      <div class="pt5">
-        <nuxt />
-      </div>
-    </section>
+    <div class="min-vh-100-l w-100 w-80-l bl b--black-10">
+      <nuxt />
+    </div>
   </main>
 </template>
 

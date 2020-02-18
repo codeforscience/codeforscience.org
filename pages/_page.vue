@@ -1,10 +1,10 @@
 <template>
-  <section class="section">
-    <div class="container post-container">
-      <h1 class="title has-text-weight-bold has-text-centered has-text-primary">
+  <section class="lh-copy mw8">
+    <div class="pa3 ph5-l">
+      <h1 class="f2 db w-100 mb2">
         {{ page.title }}
       </h1>
-      <article ref="pageContent" class="content page-content" v-html="page.html" />
+      <article ref="pageContent" class="" v-html="page.html" />
     </div>
   </section>
 </template>

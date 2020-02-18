@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-lightest-blue pa3 ph5-l">
+  <div class="bg-lightest-blue pa3 pb5-ns ph5-l">
     <section
       v-for="group of page.group"
       :key="group.name"

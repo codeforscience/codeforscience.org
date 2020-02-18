@@ -5,7 +5,7 @@ export const state = () => ({
   pages: [],
   globals: {},
   people: [],
-  siteSettings: null
+  ghostSettings: null
 })
 
 export const mutations = {
@@ -21,8 +21,8 @@ export const mutations = {
   setGlobals (state, globals) {
     state.globals = globals
   },
-  setSiteSettings (state, siteSettings) {
-    state.siteSettings = siteSettings
+  setGhostSettings (state, ghostSettings) {
+    state.ghostSettings = ghostSettings
   }
 }
 
@@ -62,7 +62,7 @@ export const actions = {
     // get site settings from ghost
     try {
       const settings = await ghostAPI().settings.browse()
-      commit('setSiteSettings', settings)
+      commit('setGhostSettings', settings)
     } catch (e) {
       // since this is server init, the error would be a server error
       error({ statusCode: 500, message: e.message })
