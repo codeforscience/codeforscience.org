@@ -6,11 +6,11 @@
           <h2 class="ph3 ph0-l f2 ttu fw5">
             {{ page.title }}
           </h2>
-          <div class="mb5 f5 f4-l lh-copy measure-wide" v-html="page.html"/>
+          <div class="mb5 f5 f4-l lh-copy measure-wide" v-html="page.html" />
           <article
             v-for="project of projects"
             :key="project.slug"
-            class="pv4 bt bb b--black-10 ph3 ph0-l"
+            class="pv4 bt bb b--black-10 ph3 ph0-l mw7"
           >
             <div class="black-70">
               <div class="flex flex-column flex-row-ns items-center">

@@ -4,10 +4,10 @@
       <div class="cover bg-center" style="background-image:url('/img/background.jpg')">
         <div class="bt b--black-10 ph3 ph5-l pb4 pb5-ns pt2 bg-black-60 w-100 vh-75 dt">
           <div class="tc dtc v-mid">
-            <h1 class="f2 f1-l fw2 mw7 ph5 center white-90 mb0 lh-title">
+            <h1 class="f2 f1-l fw2 mw6 ph3 center white-90 mb0 lh-title">
               {{ globals.tagline }}
             </h1>
-            <h2 class="f5 f4-ns fw5 measure-wide center white-80 mt3 mb4">
+            <h2 class="f5 f4-ns fw5 measure-wide ph3 center white-80 mt3 mb5">
               {{ globals.description }}
             </h2>
           </div>
@@ -51,12 +51,17 @@
       </div>
       <div class="bt b--black-10 bg-lightest-blue">
         <div class="pv3 pb5-ns mw8 center">
-          <h3 class="ph3 ph0-l f2 ttu fw5">Projects</h3>
+          <h3 class="ph3 ph0-l f2 ttu fw5">
+            Projects
+          </h3>
         </div>
       </div>
       <div class="bt b--black-10">
         <div class="pv3 pb5-ns mw8 center">
-          <h3 class="ph3 ph0-l f2 ttu fw5">Footer</h3>
+          <h3 class="ph3 ph0-l f2 ttu fw5">
+            Footer
+          </h3>
+          <p>Subscribe to Blog</p>
         </div>
       </div>
     </section>
