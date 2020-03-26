@@ -49,19 +49,25 @@
           </a>
         </section>
       </div>
-      <div class="bt b--black-10 bg-lightest-blue">
+      <div class="bt b--black-10 bg-lightest-blue ph3 ph5-l">
         <div class="pv3 pb5-ns mw8 center">
-          <h3 class="ph3 ph0-l f2 ttu fw5">
-            Projects
-          </h3>
-        </div>
-      </div>
-      <div class="bt b--black-10">
-        <div class="pv3 pb5-ns mw8 center">
-          <h3 class="ph3 ph0-l f2 ttu fw5">
-            Footer
-          </h3>
-          <p>Subscribe to Blog</p>
+          <div class="cf">
+            <article class="pv2 fl w-100 w-50-l pr0 pr5-l">
+              <h2 class="f5 f4-ns fw6 mb3">
+                Collaborative Communities
+              </h2>
+              <p class="f5 f4-l lh-copy measure mt0">
+                We develop <a href="https://osaos.codeforscience.org/">open resources to support the public interest technology community</a> and advocate for open infrastructure.  We also  facilitate collaborations between organizations and provide strategic support to community-driven initiatives engaging with technology. Every quarter we host a community call to bring people, projects, and external speakers together to discuss the open public interest technology ecosystem.
+              </p>
+            </article><article class="pv2 fl w-100 w-50-l pr0 pr5-l">
+              <h2 class="f5 f4-ns fw6 mb3">
+                Sponsored Projects
+              </h2>
+              <p class="f5 f4-l lh-copy measure mt0">
+                We bring together innovative projects committed to the public good and provide them with financial and administrative and strategic support. We support communities across domains, enabling projects to learn from each other to develop future-facing solutions that empower people. We are looking for projects that want to participate in our community, who value collaboration over competition, and who are aligned with our mission.
+              </p>
+            </article>
+          </div>
         </div>
       </div>
     </section>

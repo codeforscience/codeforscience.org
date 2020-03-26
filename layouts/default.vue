@@ -55,6 +55,67 @@ export default {
     </header>
     <div class="min-vh-100-l w-100 w-80-l bl b--black-10">
       <nuxt />
+      <footer>
+        <div class="bt b--black-10 ph3 ph5-l">
+          <div class="pv3 pb5-ns mw8 center">
+            <section class="pv2 ph3 pa4-m mw8-ns center-ns">
+              <div class="pt2 cf">
+                <div class="fl-l w-third-l">
+                  <h4 class="f4 horizontal-rule-footer">
+                    Learn More
+                  </h4>
+                  <ul class="list pl0 pr5 w5">
+                    <li class="lh-copy pv2 ba bl-0 bt-0 br-0 b--dotted b--black-30">
+                      <a class="mid-gray" href="${url}">CS&S Handbook</a>
+                    </li>
+                    <li class="lh-copy pv2 ba bl-0 bt-0 br-0 b--dotted b--black-30">
+                      <a class="mid-gray" href="${url}">Sponsored Projects</a>
+                    </li>
+                    <li class="lh-copy pv2 ba bl-0 bt-0 br-0 b--dotted b--black-30">
+                      <a class="mid-gray" href="${url}">Event Fund</a>
+                    </li>
+                    <li class="lh-copy pv2 ba bl-0 bt-0 br-0 b--dotted b--black-30">
+                      <a class="mid-gray" href="${url}">Blog</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="fl-l w-third-l">
+                  <h4 class="f4 horizontal-rule-footer">
+                    About us
+                  </h4>
+                  <ul class="list pl0 pr5 w5">
+                    <li class="lh-copy pv2 ba bl-0 bt-0 br-0 b--dotted b--black-30">
+                      <a class="mid-gray" href="${url}">People</a>
+                    </li>
+                    <li class="lh-copy pv2 ba bl-0 bt-0 br-0 b--dotted b--black-30">
+                      <a class="mid-gray" href="${url}">Our Board</a>
+                    </li>
+                    <li class="lh-copy pv2 ba bl-0 bt-0 br-0 b--dotted b--black-30">
+                      <a class="mid-gray" href="${url}">Docs</a>
+                    </li>
+                  </ul>
+                </div>
+                <div class="fl-l w-third-l">
+                  <h4 class="f4 horizontal-rule-footer">
+                    Community
+                  </h4>
+                  <ul class="list pl0 pr5 w5">
+                    <li class="lh-copy pv2 ba bl-0 bt-0 br-0 b--dotted b--black-30">
+                      <a class="mid-gray" href="${url}">Code of Conduct</a>
+                    </li>
+                    <li class="lh-copy pv2 ba bl-0 bt-0 br-0 b--dotted b--black-30">
+                      <a class="mid-gray" href="${url}">Twitter</a>
+                    </li>
+                    <li class="lh-copy pv2 ba bl-0 bt-0 br-0 b--dotted b--black-30">
+                      <a class="mid-gray" href="${url}">Event Fund</a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+      </footer>
     </div>
   </main>
 </template>
