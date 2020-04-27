@@ -15,8 +15,8 @@ export default {
 </script>
 
 <template>
-  <main class="relative flex flex-wrap">
-    <header class="bb bn-l b--black-10 w-100 w-20-l vh-100-l pa3 pa4-l pl3-l top-0 sticky-l">
+  <main class="relative flex flex-column flex-row-l">
+    <header class="bb bn-l b--black-10 w-100 mw5-l vh-100-l pa3 pa4-l pl3-l top-0 sticky-l">
       <div class="flex flex-column-l justify-between mw-100">
         <nuxt-link to="/" class="dim flex-none-l items-center mw-100 mw5">
           <img :src="globals.logo" :title="ghostSettings.title" class=" mw-100-l mw5s">
@@ -25,97 +25,58 @@ export default {
           {{ ghostSettings.description }}
         </h3>
       </div>
-      <header class="w-100 pv3 pv4-ns">
-        <nav class="f4 fw6 mw5">
-          <nuxt-link to="/about" class="pt2 lh-copy link dim black-70 db mr3 ba bl-0 bt-0 br-0 b--dotted b--black-30" title="About">
+      <header class="w-100 pv3 pv4-l">
+        <nav class="f4 fw6 mw5-l">
+          <nuxt-link to="/about" class="mr3 pt2 lh-copy link dim black-70 db-l ba bl-0 bt-0 br-0 b--dotted b--black-30" title="About">
             About
           </nuxt-link>
-          <nuxt-link to="/people" class="pt2 lh-copy link dim black-70 db ba bl-0 bt-0 br-0 b--dotted b--black-30" title="People">
+          <nuxt-link to="/people" class="mr3 pt2 lh-copy link dim black-70 db-l ba bl-0 bt-0 br-0 b--dotted b--black-30" title="People">
             People
           </nuxt-link>
-          <nuxt-link to="/projects" class="mr3 pt2 lh-copy link dim black-70 db ba bl-0 bt-0 br-0 b--dotted b--black-30" title="Projects">
+          <nuxt-link to="/projects" class="mr3 pt2 lh-copy link dim black-70 db-l ba bl-0 bt-0 br-0 b--dotted b--black-30" title="Projects">
             Projects
           </nuxt-link>
-          <nuxt-link v-if="showJobs" to="/jobs" class="pt2 lh-copy link dim black-70 db ba bl-0 bt-0 br-0 b--dotted b--black-30" title="Jobs">
+          <nuxt-link v-if="showJobs" to="/jobs" class="mr3 pt2 lh-copy link dim black-70 db-l ba bl-0 bt-0 br-0 b--dotted b--black-30" title="Jobs">
             Jobs
-          </nuxt-link>
-          <nuxt-link to="/resources" class="pt2 lh-copy link dim black-70 db ba bl-0 bt-0 br-0 b--dotted b--black-30" title="View All Pages">
-            More...
           </nuxt-link>
         </nav>
       </header>
-      <footer class="absolute bottom-0 mb4 black-70 dn db-l">
-        <a :href="`mailto:${globals.contact.email}`" class="link fw6 f4 dim black-70 lh-solid">
+      <footer class="absolute bottom-0 mb4 dn db-l">
+        <a :href="`mailto:${globals.contact.email}`" class="link fw6 f4 dim black-60 lh-solid">
           {{ globals.contact.email }}
         </a>
-        <a :href="`https://twitter.com/${globals.contact.twitter}`" target="_blank" class="dim black-50 mt1 f5 db b ttu lh-solid">
+        <a :href="`https://twitter.com/${globals.contact.twitter}`" target="_blank" class="dim black-60 mt1 f5 db b ttu lh-solid">
           {{ globals.contact.twitter }}
         </a>
       </footer>
     </header>
-    <div class="min-vh-100-l w-100 w-80-l bl b--black-10">
+    <div class="min-vh-100-l w-100 bl b--black-10">
       <nuxt />
-      <footer>
-        <div class="bt b--black-10 ph3 ph5-l">
-          <div class="pv3 pb5-ns mw8 center">
-            <section class="pv2 ph3 pa4-m mw8-ns center-ns">
-              <div class="pt2 cf">
-                <div class="fl-l w-third-l">
-                  <h4 class="f4 horizontal-rule-footer">
-                    Learn More
-                  </h4>
-                  <ul class="list pl0 pr5 w5">
-                    <li class="lh-copy pv2 ba bl-0 bt-0 br-0 b--dotted b--black-30">
-                      <a class="mid-gray" href="${url}">CS&S Handbook</a>
-                    </li>
-                    <li class="lh-copy pv2 ba bl-0 bt-0 br-0 b--dotted b--black-30">
-                      <a class="mid-gray" href="${url}">Sponsored Projects</a>
-                    </li>
-                    <li class="lh-copy pv2 ba bl-0 bt-0 br-0 b--dotted b--black-30">
-                      <a class="mid-gray" href="${url}">Event Fund</a>
-                    </li>
-                    <li class="lh-copy pv2 ba bl-0 bt-0 br-0 b--dotted b--black-30">
-                      <a class="mid-gray" href="${url}">Blog</a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="fl-l w-third-l">
-                  <h4 class="f4 horizontal-rule-footer">
-                    About us
-                  </h4>
-                  <ul class="list pl0 pr5 w5">
-                    <li class="lh-copy pv2 ba bl-0 bt-0 br-0 b--dotted b--black-30">
-                      <a class="mid-gray" href="${url}">People</a>
-                    </li>
-                    <li class="lh-copy pv2 ba bl-0 bt-0 br-0 b--dotted b--black-30">
-                      <a class="mid-gray" href="${url}">Our Board</a>
-                    </li>
-                    <li class="lh-copy pv2 ba bl-0 bt-0 br-0 b--dotted b--black-30">
-                      <a class="mid-gray" href="${url}">Docs</a>
-                    </li>
-                  </ul>
-                </div>
-                <div class="fl-l w-third-l">
-                  <h4 class="f4 horizontal-rule-footer">
-                    Community
-                  </h4>
-                  <ul class="list pl0 pr5 w5">
-                    <li class="lh-copy pv2 ba bl-0 bt-0 br-0 b--dotted b--black-30">
-                      <a class="mid-gray" href="${url}">Code of Conduct</a>
-                    </li>
-                    <li class="lh-copy pv2 ba bl-0 bt-0 br-0 b--dotted b--black-30">
-                      <a class="mid-gray" href="${url}">Twitter</a>
-                    </li>
-                    <li class="lh-copy pv2 ba bl-0 bt-0 br-0 b--dotted b--black-30">
-                      <a class="mid-gray" href="${url}">Event Fund</a>
-                    </li>
-                  </ul>
-                </div>
-              </div>
-            </section>
+      <footer class="pa3 ph5-ns black-70 bt b--black-10">
+        <div class="pt2 mb2 flex flex-wrap">
+          <div
+            v-for="section of globals.footerNav"
+            :key="section.title"
+            class="w-30 w-auto-l mr3 mr5-l"
+          >
+            <h4 class="f4 mb0">
+              {{ section.title }}
+            </h4>
+            <ul class="list pl0">
+              <li
+                v-for="link of section.links"
+                :key="link.title"
+                class="lh-copy pv1">
+                <a v-if="link.external" class="mid-gray link" :href="link.url">{{ link.title }}</a>
+                <nuxt-link v-else class="mid-gray link" :to="link.url">{{ link.title }}</nuxt-link>
+              </li>
+            </ul>
           </div>
+          <p class="lh-copy f6 black-60">
+            Code for Science and Society, Inc. is a registered US 501(c)(3) public charity. EIN 81-3791683
+          </p>
         </div>
-      </footer>
+  </footer>
     </div>
   </main>
 </template>

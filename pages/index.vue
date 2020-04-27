@@ -1,6 +1,6 @@
 <template>
   <div>
-    <section class="bl b--black-10 flex flex-column black-70">
+    <section class="flex flex-column black-70">
       <div class="cover bg-center" style="background-image:url('/img/background.jpg')">
         <div class="bt b--black-10 ph3 ph5-l pb4 pb5-ns pt2 bg-black-60 w-100 vh-75 dt">
           <div class="tc dtc v-mid">
@@ -13,7 +13,7 @@
           </div>
         </div>
       </div>
-      <div class="bt b--black-10 ph3 ph5-l pb4 pb5-ns pt3">
+      <div class="bt b--black-10 ph3 ph5-ns pb4 pb5-ns pt3">
         <section class="mw8 center">
           <h2 class="ph3 ph0-l f2 ttu fw5">
             Latest News
@@ -49,8 +49,8 @@
           </a>
         </section>
       </div>
-      <div class="bt b--black-10 bg-lightest-blue ph3 ph5-l">
-        <div class="pv3 pb5-ns mw8 center">
+      <div class="bt b--black-10 bg-lightest-blue ph3 ph5-ns">
+        <div class="pv3 pb5-l mw8 center">
           <div class="cf">
             <article class="pv2 fl w-100 w-50-l pr0 pr5-l">
               <h2 class="f5 f4-ns fw6 mb3">

@@ -1,7 +1,7 @@
 <template>
   <section class="lh-copy mw8">
-    <div class="pa3 ph5-l">
-      <h2 class="ph3 ph0-l f2 ttu fw5">
+    <div class="pa3 ph5-ns">
+      <h2 class="f2 ttu fw5">
         {{ page.title }}
       </h2>
       <article ref="pageContent" class="lh-copy measure-wide" v-html="page.html" />

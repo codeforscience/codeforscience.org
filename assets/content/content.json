@@ -18,5 +18,38 @@
   "contact": {
     "twitter": "@codeforsociety",
     "email": "hi@codeforsociety.org"
-  }
+  },
+  "footerNav": [
+    {
+      "title": "Learn More",
+      "links": [
+        {
+          "title": "About Us",
+          "url": "about"
+        },
+        {
+          "title": "Blog",
+          "url": "https://blog.codeforscience.org",
+          "external": true
+        },
+        {
+          "title": "More Resoruces",
+          "url": "resources"
+        }
+      ]
+    },
+    {
+      "title": "Community",
+      "links": [
+        {
+          "title": "Projects",
+          "url": "projects"
+        },
+        {
+          "title": "Code of Conduct",
+          "url": "coc"
+        }
+      ]
+    }
+  ]
 }
