@@ -72,7 +72,7 @@ export default {
               </li>
             </ul>
           </div>
-          <p class="lh-copy f6 black-60">
+          <p class="lh-copy f6 black-60 w-100">
             Code for Science and Society, Inc. is a registered US 501(c)(3) public charity. EIN 81-3791683
           </p>
         </div>
