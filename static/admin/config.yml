@@ -19,6 +19,7 @@ collections:
           - { label: 'Description', name: 'description', widget: 'string' }
           - { label: 'Logo', name: 'logo', widget: 'image' }
           - { label: 'Background', name: 'background', widget: 'image' }
+          - { label: 'Footer Text', name: 'footer', widget: 'string' }
           - label: 'Programs'
             name: 'programs'
             widget: list
@@ -81,7 +82,7 @@ collections:
       - {label: 'Website', name: 'website', widget: 'string', required: false, hint: 'If this is present, both image and name will link there.', pattern: ['^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/|dat:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$', hint: 'Must be a valid URL.']}
 
 
-  - name: 'Jobs'
+  - name: 'Collection: Jobs'
     label: 'Jobs'
     folder: 'assets/content/jobs'
     create: true

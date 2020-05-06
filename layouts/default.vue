@@ -66,17 +66,20 @@ export default {
               <li
                 v-for="link of section.links"
                 :key="link.title"
-                class="lh-copy pv1">
+                class="lh-copy pv1"
+              >
                 <a v-if="link.external" class="mid-gray link" :href="link.url">{{ link.title }}</a>
-                <nuxt-link v-else class="mid-gray link" :to="link.url">{{ link.title }}</nuxt-link>
+                <nuxt-link v-else class="mid-gray link" :to="link.url">
+                  {{ link.title }}
+                </nuxt-link>
               </li>
             </ul>
           </div>
           <p class="lh-copy f6 black-60 w-100">
-            Code for Science and Society, Inc. is a registered US 501(c)(3) public charity. EIN 81-3791683
+            {{ globals.footer }}
           </p>
         </div>
-  </footer>
+      </footer>
     </div>
   </main>
 </template>
