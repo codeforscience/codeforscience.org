@@ -7,60 +7,62 @@ public_folder: /img
 
 collections:
   # Globals
-  - label: 'Globals'
-    name: 'globals'
-    file: 'assets/content/globals.json'
-    fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
-      - { label: 'Tagline', name: 'tagline', widget: 'string' }
-      - { label: 'Description', name: 'description', widget: 'string' }
-      - { label: 'Logo', name: 'logo', widget: 'image' }
-      - { label: 'Background', name: 'background', widget: 'image' }
-      - label: 'Programs'
-        name: 'programs'
-        widget: list
+  - name: content
+    label: Content
+    files:
+      - label: 'Globals'
+        name: 'globas'
+        file: 'assets/content/globals.json'
         fields:
-          - {label: Title, name: title, widget: string}
-          - { label: 'Description', name: 'description', widget: 'text' }
-      - label: 'Contact'
-        name: 'contact'
-        widget: 'object'
-        fields:
-          - { label: 'Twitter', name: 'twitter', widget: 'string' }
-          - { label: 'Email', name: 'email', widget: 'string' }
-      - label: "Footer Navigation"
-        name: footerNav
-        widget: list
-        fields:
-          - {label: Title, name: title, widget: string}
-          - label: Links
-            name: links
+          - { label: 'Title', name: 'title', widget: 'string' }
+          - { label: 'Tagline', name: 'tagline', widget: 'string' }
+          - { label: 'Description', name: 'description', widget: 'string' }
+          - { label: 'Logo', name: 'logo', widget: 'image' }
+          - { label: 'Background', name: 'background', widget: 'image' }
+          - label: 'Programs'
+            name: 'programs'
             widget: list
             fields:
               - {label: Title, name: title, widget: string}
-              - {label: URL, name: url, widget: string}
-              - {label: 'External', name: 'external', widget: 'boolean', hint: 'Set to external to handle external links without using the router.', required: false, default: false}
-
-  # People Page
-  - label: 'People Page'
-    name: 'People'
-    file: 'assets/content/pages/people.json'
-    fields:
-      - {label: Title, name: title, widget: string}
-      - label: 'Group'
-        name: 'group'
-        widget: 'list'
+              - { label: 'Description', name: 'description', widget: 'text' }
+          - label: 'Contact'
+            name: 'contact'
+            widget: 'object'
+            fields:
+              - { label: 'Twitter', name: 'twitter', widget: 'string' }
+              - { label: 'Email', name: 'email', widget: 'string' }
+          - label: "Footer Navigation"
+            name: footerNav
+            widget: list
+            fields:
+              - {label: Title, name: title, widget: string}
+              - label: Links
+                name: links
+                widget: list
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: URL, name: url, widget: string}
+                  - {label: 'External', name: 'external', widget: 'boolean', hint: 'Set to external to handle external links without using the router.', required: false, default: false}
+      # People Page
+      - label: 'People Page'
+        name: 'People'
+        file: 'assets/content/pages/people.json'
         fields:
-          - {label: 'Group Name', name: name, widget: string}
-          - {label: 'Description', name: 'description', widget: 'markdown', buttons: ['link']}
-          - label: "People"
-            name: "people"
-            widget: "relation"
-            collection: "people"
-            searchFields: ["name"]
-            multiple: true
-            valueField: "name"
-            displayFields: ["name"]
+          - {label: Title, name: title, widget: string}
+          - label: 'Group'
+            name: 'group'
+            widget: 'list'
+            fields:
+              - {label: 'Group Name', name: name, widget: string}
+              - {label: 'Description', name: 'description', widget: 'markdown', buttons: ['link']}
+              - label: "People"
+                name: "people"
+                widget: "relation"
+                collection: "people"
+                searchFields: ["name"]
+                multiple: true
+                valueField: "name"
+                displayFields: ["name"]
 
 
   - label: 'Collection: People'
