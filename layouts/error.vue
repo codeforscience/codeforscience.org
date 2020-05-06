@@ -18,6 +18,7 @@
 
 <script>
 export default {
+  props: ['error'],
   computed: {
     globals () {
       return this.$store.state.globals
