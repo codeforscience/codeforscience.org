@@ -17,4 +17,17 @@
 </template>
 
 <script>
+export default {
+  computed: {
+    globals () {
+      return this.$store.state.globals
+    },
+    ghostSettings () {
+      return this.$store.state.ghostSettings
+    },
+    showJobs () {
+      return this.$store.state.jobs && this.$store.state.jobs.length
+    }
+  }
+}
 </script>
