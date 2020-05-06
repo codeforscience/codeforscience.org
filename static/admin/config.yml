@@ -7,60 +7,61 @@ public_folder: /img
 
 collections:
   # Globals
-  - name: globals
-    label: Globals
-    files:
-      - label: 'Content'
-        name: 'content'
-        file: 'assets/content/globals.json'
+  - label: 'Globals'
+    name: 'globals'
+    file: 'assets/content/globals.json'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Tagline', name: 'tagline', widget: 'string' }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Logo', name: 'logo', widget: 'image' }
+      - { label: 'Background', name: 'background', widget: 'image' }
+      - label: 'Programs'
+        name: 'programs'
+        widget: list
         fields:
-          - { label: 'Title', name: 'title', widget: 'string' }
-          - { label: 'Tagline', name: 'tagline', widget: 'string' }
-          - { label: 'Description', name: 'description', widget: 'string' }
-          - { label: 'Logo', name: 'logo', widget: 'image' }
-          - { label: 'Background', name: 'background', widget: 'image' }
-          - label: 'Contact'
-            name: 'contact'
-            widget: 'object'
-            fields:
-              - { label: 'Twitter', name: 'twitter', widget: 'string' }
-              - { label: 'Email', name: 'email', widget: 'string' }
-          - label: "Footer Navigation"
-            name: footerNav
+          - {label: Title, name: title, widget: string}
+          - { label: 'Description', name: 'description', widget: 'text' }
+      - label: 'Contact'
+        name: 'contact'
+        widget: 'object'
+        fields:
+          - { label: 'Twitter', name: 'twitter', widget: 'string' }
+          - { label: 'Email', name: 'email', widget: 'string' }
+      - label: "Footer Navigation"
+        name: footerNav
+        widget: list
+        fields:
+          - {label: Title, name: title, widget: string}
+          - label: Links
+            name: links
             widget: list
             fields:
               - {label: Title, name: title, widget: string}
-              - label: Links
-                name: links
-                widget: list
-                fields:
-                  - {label: Title, name: title, widget: string}
-                  - {label: URL, name: url, widget: string}
-                  - {label: 'External', name: 'external', widget: 'boolean', hint: 'Set to external to handle external links without using the router.', required: false, default: false}
+              - {label: URL, name: url, widget: string}
+              - {label: 'External', name: 'external', widget: 'boolean', hint: 'Set to external to handle external links without using the router.', required: false, default: false}
 
-  # Pages
-  - label: 'Pages: About'
-    name: 'about'
-    files:
-      - label: 'People'
-        name: 'People'
-        file: 'assets/content/pages/people.json'
+  # People Page
+  - label: 'People Page'
+    name: 'People'
+    file: 'assets/content/pages/people.json'
+    fields:
+      - {label: Title, name: title, widget: string}
+      - label: 'Group'
+        name: 'group'
+        widget: 'list'
         fields:
-          - {label: Title, name: title, widget: string}
-          - label: 'Group'
-            name: 'group'
-            widget: 'list'
-            fields:
-              - {label: 'Group Name', name: name, widget: string}
-              - {label: 'Description', name: 'description', widget: 'markdown', buttons: ['link']}
-              - label: "People"
-                name: "people"
-                widget: "relation"
-                collection: "people"
-                searchFields: ["name"]
-                multiple: true
-                valueField: "name"
-                displayFields: ["name"]
+          - {label: 'Group Name', name: name, widget: string}
+          - {label: 'Description', name: 'description', widget: 'markdown', buttons: ['link']}
+          - label: "People"
+            name: "people"
+            widget: "relation"
+            collection: "people"
+            searchFields: ["name"]
+            multiple: true
+            valueField: "name"
+            displayFields: ["name"]
+
 
   - label: 'Collection: People'
     name: 'people'
@@ -77,19 +78,6 @@ collections:
       - {label: 'Image Alt Text', name: 'imageAltText', widget: 'string', required: false, hint: "Briefly describe the image; this will be read by screen readers." }
       - {label: 'Website', name: 'website', widget: 'string', required: false, hint: 'If this is present, both image and name will link there.', pattern: ['^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/|dat:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$', hint: 'Must be a valid URL.']}
 
-  - label: 'Collection: Projects'
-    name: 'project'
-    identifier_field: 'name'
-    folder: 'assets/content/projects'
-    create: true
-    format: 'json'
-    slug: "{{name}}"
-    fields:
-      - {label: 'Name', name: 'name', widget: 'string', hint: 'First and last name; required.', required: true}
-      - {label: 'Description', name: 'bio', widget: 'markdown', buttons: ['link'], required: false}
-      - {label: 'Logo', name: 'logo', widget: 'image', required: true }
-      - {label: 'Logo Alt Text', name: 'logoAltText', widget: 'string', required: false, hint: "Briefly describe the image; this will be read by screen readers." }
-      - {label: 'Website', name: 'website', widget: 'string', required: true, hint: 'If this is present, both image and name will link there.', pattern: ['^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/|dat:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$', hint: 'Must be a valid URL.']}
 
   - name: 'Jobs'
     label: 'Jobs'
