@@ -12,7 +12,7 @@ collections:
     files:
       - label: 'Content'
         name: 'content'
-        file: 'assets/content/content.json'
+        file: 'assets/content/globals.json'
         fields:
           - { label: 'Title', name: 'title', widget: 'string' }
       - file: assets/content/globals/navigation.json

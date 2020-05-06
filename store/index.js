@@ -52,12 +52,12 @@ export const actions = {
     })
     await commit('setPages', pages)
 
-    const content = await require('~/assets/content/content.json')
-    const globalFiles = await require.context('~/assets/content/globals/', false, /\.json$/)
-    globalFiles.keys().map((key) => {
-      content[key.slice(2, -5)] = globalFiles(key)
-    })
-    await commit('setGlobals', content)
+    const globals = await require('~/assets/content/globals.json')
+    // const globalFiles = await require.context('~/assets/content/globals/', false, /\.json$/)
+    // globalFiles.keys().map((key) => {
+    //   content[key.slice(2, -5)] = globalFiles(key)
+    // })
+    await commit('setGlobals', globals)
 
     // get site settings from ghost
     try {
