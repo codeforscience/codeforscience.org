@@ -15,23 +15,27 @@ collections:
         file: 'assets/content/globals.json'
         fields:
           - { label: 'Title', name: 'title', widget: 'string' }
-      - file: assets/content/globals/navigation.json
-        label: Navigation
-        name: navigation
-        fields:
-          - label: Navigation
-            name: nav_items
+          - { label: 'Tagline', name: 'tagline', widget: 'string' }
+          - { label: 'Description', name: 'description', widget: 'string' }
+          - { label: 'Logo', name: 'logo', widget: 'image' }
+          - { label: 'Background', name: 'background', widget: 'image' }
+          - label: 'Contact'
+            name: 'contact'
+            widget: 'object'
+            fields:
+              - { label: 'Twitter', name: 'twitter', widget: 'string' }
+              - { label: 'Email', name: 'email', widget: 'string' }
+          - label: "Footer Navigation"
+            name: footerNav
             widget: list
             fields:
-              - {label: Label, name: label, widget: string}
-              - {label: Path, name: path, widget: string, required: false, hint: 'Leave this blank if this item has no landing page or children.'}
-              - {label: 'External', name: 'external', widget: 'boolean', hint: 'Set to external to handle external links without using the router.', required: false, default: false}
-              - label: Secondary items
-                name: secondary
+              - {label: Title, name: title, widget: string}
+              - label: Links
+                name: links
                 widget: list
                 fields:
-                  - {label: Label, name: label, widget: string}
-                  - {label: Path, name: path, widget: string}
+                  - {label: Title, name: title, widget: string}
+                  - {label: URL, name: url, widget: string}
                   - {label: 'External', name: 'external', widget: 'boolean', hint: 'Set to external to handle external links without using the router.', required: false, default: false}
 
   # Pages
@@ -40,7 +44,7 @@ collections:
     files:
       - label: 'People'
         name: 'People'
-        file: 'assets/content/pages/about.json'
+        file: 'assets/content/pages/people.json'
         fields:
           - {label: Title, name: title, widget: string}
           - label: 'Group'
