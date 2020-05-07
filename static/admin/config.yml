@@ -1,7 +1,6 @@
 backend:
-  name: github
-  repo: codeforscience/css-website-new # Path to your GitHub repository
-  open_authoring: true
+  name: git-gateway
+  branch: master
 
 publish_mode: editorial_workflow
 
