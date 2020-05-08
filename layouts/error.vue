@@ -1,14 +1,32 @@
 <template>
-  <div class="container">
-    <h1 v-if="error.statusCode === 404">Page not found</h1>
-    <h1 v-else>An error occurred</h1>
-    <nuxt-link to="/">Home page</nuxt-link>
-  </div>
+  <section class="lh-copy mw8">
+    <div class="pa3 ph5-ns">
+      <h2
+        v-if="error.statusCode === 404"
+        class="f2 ttu fw5"
+      >
+        Page not found
+      </h2>
+      <h2 v-else>
+        An error occurred
+      </h2>
+      <article ref="pageContent" class="lh-copy measure-wide">
+        <nuxt-link to="/" tag="a">
+          Go Home
+        </nuxt-link>
+      </article>
+    </div>
+  </section>
 </template>
 
 <script>
 export default {
-  props: ['error'],
+  props: {
+    error: {
+      type: Object,
+      default: null
+    }
+  },
   layout: 'default'
 }
 </script>
