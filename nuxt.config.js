@@ -21,6 +21,10 @@ export default async () => {
         { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
       ]
     },
+    sitemap: {
+      hostname: 'https://codeforscience.org',
+      gzip: true,
+    },
     /*
     ** Customize the progress-bar color
     */
