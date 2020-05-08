@@ -6,7 +6,7 @@
       </h2>
       <article ref="pageContent" class="lh-copy measure-wide">
         <nuxt-link to="/" tag="a">
-          Home
+          Go Home
         </nuxt-link>
       </article>
     </div>
