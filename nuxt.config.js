@@ -48,7 +48,8 @@ export default async () => {
     */
     modules: [
       '@nuxtjs/markdownit',
-      '@nuxtjs/dotenv'
+      '@nuxtjs/dotenv',
+      '@nuxtjs/sitemap'
     ],
     env: {
       // loaded from .env file locally and from netlify in deployment

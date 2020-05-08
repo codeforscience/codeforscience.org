@@ -57,6 +57,11 @@ export default {
     ghostSettings () {
       return this.$store.state.ghostSettings
     }
+  },
+  head () {
+    return {
+      title: 'CS&S Sponsored Projects'
+    }
   }
 }
 </script>

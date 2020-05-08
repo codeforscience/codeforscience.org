@@ -41,6 +41,9 @@ export default {
         return route === page.slug
       })
     }
+  },
+  head: {
+    title: 'People at CS&S'
   }
 }
 </script>
