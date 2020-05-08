@@ -79,7 +79,6 @@ export default async () => {
     */
     generate: {
       subFolders: false,
-      fallback: true,
       async routes () {
         const routes = await generateRoutes()
         const fs = require('fs')
