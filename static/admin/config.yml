@@ -84,11 +84,11 @@ collections:
       - {label: 'Website', name: 'website', widget: 'string', required: false, hint: 'If this is present, both image and name will link there.', pattern: ['^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/|dat:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$', hint: 'Must be a valid URL.']}
 
 
-  - name: 'Collection: Jobs'
-    label: 'Jobs'
+  - label: 'Collection: Jobs'
+    name: 'jobs'
     folder: 'assets/content/jobs'
     create: true
-    slug: '{{slug}}'
+    slug: "{{year}}-{{month}}_{{slug}}"
     format: 'json'
     editor:
       preview: false
@@ -97,4 +97,4 @@ collections:
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Short Description', name: 'description', widget: 'markdown' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
-      - { label: 'Use Airtable Form', name: 'useForm', widget: 'boolean', default: true }
+      - { label: 'Use Airtable Form', name: 'useForm', widget: 'boolean', default: false }
