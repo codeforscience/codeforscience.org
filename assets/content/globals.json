@@ -1,24 +1,8 @@
 {
-  "title": "Code for Science & Society",
-  "tagline": "Strategic Support for Public Technology",
-  "description": "We are a US-based 501(c)(3) nonprofit supporting open collaboration in public interest technology through fiscal sponsorship and other programs supporting sustainable open source. We envision a future where communities build technology infrastructure that reflect their values.",
-  "background": "/img/background.jpg",
-  "logo": "/img/Blue-logo-black-text-stacked.png",
-  "programs": [
-    {
-      "title": "Collaborative Communities",
-      "description": "We develop [open resources to support the public interest technology community](https://osaos.codeforscience.org/) and advocate for open infrastructure.  We also  facilitate collaborations between organizations and provide strategic support to community-driven initiatives engaging with technology. Every quarter we host a community call to bring people, projects, and external speakers together to discuss the open public interest technology ecosystem."
-    },
-    {
-      "title": "Sponsored Projects",
-      "description": "We bring together innovative projects committed to the public good and provide them with financial and administrative and strategic support. We support communities across domains, enabling projects to learn from each other to develop future-facing solutions that empower people. We are looking for projects that want to participate in our community, who value collaboration over competition, and who are aligned with our mission."
-    }
-  ],
   "contact": {
     "twitter": "@codeforsociety",
     "email": "hi@codeforsociety.org"
   },
-  "footer": " Code for Science and Society, Inc. is a registered US 501(c)(3) public charity. EIN 81-3791683",
   "footerNav": [
     {
       "title": "Learn More",
@@ -41,10 +25,6 @@
         {
           "title": "Projects",
           "url": "projects"
-        },
-        {
-          "title": "Code of Conduct",
-          "url": "coc"
         }
       ]
     },
@@ -61,5 +41,21 @@
         }
       ]
     }
-  ]
+  ],
+  "logo": "/img/Blue-logo-black-text-stacked.png",
+  "background": "/img/background.jpg",
+  "tagline": "Strategic Support for Public Technology",
+  "programs": [
+    {
+      "title": "Collaborative Communities",
+      "description": "We develop [open resources to support the public interest technology community](https://osaos.codeforscience.org/) and advocate for open infrastructure.  We also  facilitate collaborations between organizations and provide strategic support to community-driven initiatives engaging with technology. Every quarter we host a community call to bring people, projects, and external speakers together to discuss the open public interest technology ecosystem."
+    },
+    {
+      "title": "Sponsored Projects",
+      "description": "We bring together innovative projects committed to the public good and provide them with financial and administrative and strategic support. We support communities across domains, enabling projects to learn from each other to develop future-facing solutions that empower people. We are looking for projects that want to participate in our community, who value collaboration over competition, and who are aligned with our mission."
+    }
+  ],
+  "title": "Code for Science & Society",
+  "footer": " Code for Science and Society, Inc. is a registered US 501(c)(3) public charity. EIN 81-3791683",
+  "description": "We are a US-based 501(c)(3) nonprofit supporting open collaboration in public interest technology through fiscal sponsorship and other programs supporting sustainable open source. We envision a future where communities build technology infrastructure that reflect their values."
 }
