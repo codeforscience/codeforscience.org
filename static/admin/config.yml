@@ -18,7 +18,7 @@ collections:
         fields:
           - { label: 'Title', name: 'title', widget: 'string' }
           - { label: 'Tagline', name: 'tagline', widget: 'string' }
-          - { label: 'Description', name: 'description', widget: 'string' }
+          - { label: 'Description', name: 'description', widget: 'text' }
           - { label: 'Logo', name: 'logo', widget: 'image' }
           - { label: 'Background', name: 'background', widget: 'image' }
           - { label: 'Footer Text', name: 'footer', widget: 'string' }
@@ -27,7 +27,7 @@ collections:
             widget: list
             fields:
               - {label: Title, name: title, widget: string}
-              - { label: 'Description', name: 'description', widget: 'text' }
+              - { label: 'Description', name: 'description', widget: 'markdown' }
           - label: 'Contact'
             name: 'contact'
             widget: 'object'
