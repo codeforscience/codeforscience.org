@@ -24,17 +24,14 @@
       "title": "Learn More",
       "links": [
         {
-          "title": "About Us",
-          "url": "about"
+          "title": "OSAOS Handbook",
+          "url": "https://osaos.codeforscience.org",
+          "external": true
         },
         {
           "title": "Blog",
           "url": "https://blog.codeforscience.org",
           "external": true
-        },
-        {
-          "title": "More Resoruces",
-          "url": "resources"
         }
       ]
     },
@@ -48,6 +45,19 @@
         {
           "title": "Code of Conduct",
           "url": "coc"
+        }
+      ]
+    },
+    {
+      "title": "Organization",
+      "links": [
+        {
+          "title": "People",
+          "url": "people"
+        },
+        {
+          "title": "About CS&S",
+          "url": "about"
         }
       ]
     }
