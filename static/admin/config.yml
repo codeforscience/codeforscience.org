@@ -13,7 +13,7 @@ collections:
     label: Content
     files:
       - label: 'Globals'
-        name: 'globas'
+        name: 'globals'
         file: 'assets/content/globals.json'
         fields:
           - { label: 'Title', name: 'title', widget: 'string' }
@@ -69,6 +69,7 @@ collections:
 
 
   - label: 'Collection: People'
+    label_singular: 'Person'
     name: 'people'
     identifier_field: 'name'
     folder: 'assets/content/people'
@@ -85,6 +86,7 @@ collections:
 
 
   - label: 'Collection: Jobs'
+    label_singular: 'Job'
     name: 'jobs'
     folder: 'assets/content/jobs'
     create: true
