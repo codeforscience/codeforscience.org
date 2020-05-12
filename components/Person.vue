@@ -6,7 +6,7 @@
     <div class="tc">
       <img
         v-if="person.image"
-        :src="person.image"
+        :src="image"
         class="br-100 h4 w4 dib ba b--black-05 pa2"
         :title="person.name"
         style="object-fit:cover;"
@@ -40,6 +40,12 @@ export default {
     person (name) {
       return this.$store.state.people
         .filter(x => x.name === this.name)[0]
+    },
+    image (name) {
+      const person = this.$store.state.people
+        .filter(x => x.name === this.name)[0]
+      if (!person.image) return
+      return require(`@/assets${person.image}`)
     }
   }
 }

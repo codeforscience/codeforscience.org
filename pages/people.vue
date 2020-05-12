@@ -42,8 +42,10 @@ export default {
       })
     }
   },
-  head: {
-    title: 'People at CS&S'
+  head () {
+    return {
+      title: 'People at CS&S'
+    }
   }
 }
 </script>

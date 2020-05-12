@@ -1,7 +1,7 @@
 <template>
   <div>
     <section class="flex flex-column black-70">
-      <div class="cover bg-center" style="background-image:url('/img/background.jpg')">
+      <div class="cover bg-center" :style="`background-image:url(${backgroundImage})`">
         <div class="bt b--black-10 ph3 ph5-l pb4 pb5-ns pt2 bg-black-60 w-100 vh-75 dt">
           <div class="tc dtc v-mid">
             <h1 class="f2 f1-l fw2 mw6 ph3 center white-90 mb0 lh-title">
@@ -94,6 +94,9 @@ export default {
     },
     ghostSettings () {
       return this.$store.state.ghostSettings
+    },
+    backgroundImage () {
+      return require(`@/assets${this.$store.state.globals.background}`)
     }
   }
 }

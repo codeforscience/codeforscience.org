@@ -19,7 +19,7 @@ export default {
     <header class="bb bn-l b--black-10 w-100 mw5-l vh-100-l pa3 pa4-l pl3-l top-0 sticky-l">
       <div class="flex flex-column-l justify-between mw-100">
         <nuxt-link to="/" class="dim flex-none-l items-center mw-100 mw5">
-          <img :src="`${globals.logo}?inline`" :title="ghostSettings.title" class=" mw-100-l mw5s">
+          <img :src="require(`@/assets${this.$store.state.globals.logo}?inline`)" :title="ghostSettings.title" class=" mw-100-l mw5s">
         </nuxt-link>
         <h3 class="f5 f4-ns fw4 bt b--gray pv3-l pv2 mw5 dn db-l">
           {{ ghostSettings.description }}
