@@ -45,7 +45,8 @@ export default async () => {
     */
     buildModules: [
       // Doc: https://github.com/nuxt-community/eslint-module
-      '@nuxtjs/eslint-module'
+      '@nuxtjs/eslint-module',
+      '@aceforth/nuxt-optimized-images'
     ],
     /*
     ** Nuxt.js modules
@@ -63,6 +64,9 @@ export default async () => {
     },
     markdownit: {
       injected: true
+    },
+    optimizedImages: {
+      optimizeImages: true
     },
     /*
     ** Build configuration

@@ -20,10 +20,18 @@
     "tachyons": "^4.12.0"
   },
   "devDependencies": {
+    "@aceforth/nuxt-optimized-images": "^1.0.0",
     "@nuxtjs/eslint-config": "^2.0.2",
     "@nuxtjs/eslint-module": "^2.0.0",
     "babel-eslint": "^10.1.0",
     "eslint": "^7.0.0",
-    "eslint-plugin-nuxt": "^0.5.2"
+    "eslint-plugin-nuxt": "^0.5.2",
+    "imagemin-mozjpeg": "^8.0.0",
+    "imagemin-pngquant": "^8.0.0",
+    "imagemin-svgo": "^7.1.0",
+    "lqip-loader": "^2.2.0",
+    "responsive-loader": "^1.2.0",
+    "sharp": "^0.25.2",
+    "webp-loader": "^0.6.0"
   }
 }
