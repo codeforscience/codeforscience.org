@@ -4,8 +4,8 @@
       <div
         class="cover bg-center"
         :style="{
-          backgroundColor: require('~/assets/img/background.jpg?lqip-colors')[0],
-          backgroundImage: require('~/assets/img/background.jpg')
+          backgroundColor: require('~/static/img/background.jpg?lqip-colors')[0],
+          backgroundImage: require('~/static/img/background.jpg')
         }">
         <div class="bt b--black-10 ph3 ph5-l pb4 pb5-ns pt2 bg-black-60 w-100 vh-75 dt">
           <div class="tc dtc v-mid">
