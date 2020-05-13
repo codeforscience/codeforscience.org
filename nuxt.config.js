@@ -39,7 +39,7 @@ export default async () => {
     ** Plugins to load before mounting the App
     */
     plugins: [
-      { src: '~/plugins/vue-lazyload', ssr: false }
+      { src: '~/plugins/vue-lazyload' }
     ],
     /*
     ** Nuxt.js dev-modules
@@ -68,7 +68,8 @@ export default async () => {
       injected: true
     },
     optimizedImages: {
-      optimizeImages: true
+      optimizeImages: true,
+      inlineImageLimit: -1
     },
     /*
     ** Build configuration
