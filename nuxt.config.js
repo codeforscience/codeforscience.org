@@ -79,6 +79,18 @@ export default async () => {
       ** You can extend webpack config here
       */
       extend (config, ctx) {
+        config.module.rules.push(
+          {
+            test: /\.(png|jp(e*)g|svg)$/,
+            use: [{
+                loader: 'url-loader',
+                options: {
+                    limit: 1000,
+                    name: 'img/[contenthash:7].[ext]'
+               }
+            }]
+          }
+        )
       }
     },
     /*
