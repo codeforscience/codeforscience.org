@@ -85,7 +85,7 @@ export default async () => {
             use: [{
                 loader: 'url-loader',
                 options: {
-                    limit: 1000,
+                    limit: -1,
                     name: 'img/[contenthash:7].[ext]'
                }
             }]
