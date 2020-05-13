@@ -6,7 +6,7 @@
     <div class="tc">
       <img
         v-if="person.image"
-        :src="image"
+        v-lazy="image"
         class="br-100 h4 w4 dib ba b--black-05 pa2"
         :title="person.name"
         style="object-fit:cover;"

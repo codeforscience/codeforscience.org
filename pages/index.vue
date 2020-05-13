@@ -31,8 +31,8 @@
                   </h1>
                   <div class="f5 f4-l lh-copy" v-html="$md.render(post.excerpt)" />
                 </div>
-                <div v-if="post.feature_image" class="pl3-ns order-1 order-2-ns mb4 mb0-ns w-100 w-40-ns">
-                  <img :src="post.feature_image" class="db h5" alt="Featured Image">
+                <div v-if="post.feature_image" class="pl3-ns order-1 order-2-ns mb4 mb0-ns w-40">
+                  <img v-lazy="`${post.feature_image}&w=400&fit=crop`" class="db h-auto w6-ns" alt="Featured Image">
                 </div>
               </div>
             </a>
