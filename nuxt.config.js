@@ -47,8 +47,8 @@ export default async () => {
     buildModules: [
       // Doc: https://github.com/nuxt-community/eslint-module
       '@nuxtjs/eslint-module',
-      '@aceforth/nuxt-optimized-images',
       'nuxt-purgecss'
+      // '@aceforth/nuxt-optimized-images',
     ],
     /*
     ** Nuxt.js modules
@@ -79,18 +79,6 @@ export default async () => {
       ** You can extend webpack config here
       */
       extend (config, ctx) {
-        config.module.rules.push(
-          {
-            test: /\.(png|jp(e*)g|svg)$/,
-            use: [{
-                loader: 'url-loader',
-                options: {
-                    limit: -1,
-                    name: 'img/[contenthash:7].[ext]'
-               }
-            }]
-          }
-        )
       }
     },
     /*
