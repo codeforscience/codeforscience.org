@@ -5,11 +5,11 @@ admin_path:
 webhook_url: 
 sections:
 - type: directory
-  path: assets/content
-  label: hh
-  create: none
+  path: assets/content/people
+  label: People
+  create: documents
   match: "**/*"
-  new_doc_ext: json
+  new_doc_ext: ".json"
 upload_dir: uploads
 public_path: "/uploads"
 front_matter_path: ''
