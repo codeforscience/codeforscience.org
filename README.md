@@ -12,7 +12,7 @@ Other content is managed via ghost blog at https://blog.codeforscience.org/ghost
 
 ## Development
 
-This site uses Nuxt.js](https://nuxtjs.org). Content is pulled from the local json files, managed by NetlifyCMS, and our ghost blog.
+This site uses [Nuxt.js](https://nuxtjs.org). Content is pulled from the local json files, managed by NetlifyCMS, and our ghost blog.
 
 To run the website locally, create an `.env` file with the following variables from the Ghost blog:
 
