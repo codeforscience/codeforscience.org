@@ -15,7 +15,7 @@
             <div class="black-70">
               <div class="flex flex-column flex-row-ns items-center">
                 <div v-if="project.feature_image" class="order-2 order-1-ns mb4 mb0-ns w-100 w-40-ns">
-                  <img :src="project.feature_image" class="db mw5-l mw4 center" style="max-height:150px;" alt="Featured Image">
+                  <img v-lazy="project.feature_image" class="db mw5-l mw4 center" style="max-height:150px;" alt="Featured Image">
                 </div>
                 <div class="w-100 w-60-ns pl4-l pr3-ns order-1 order-2-ns">
                   <h1 class="f4 mt0 lh-title">

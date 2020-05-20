@@ -1,7 +1,7 @@
 <template>
   <div>
     <section class="flex flex-column black-70">
-      <div class="cover bg-center" style="background-image:url('/img/background.jpg')">
+      <div class="cover bg-center" :style="`background-image:url(${backgroundImage})`">
         <div class="bt b--black-10 ph3 ph5-l pb4 pb5-ns pt2 bg-black-60 w-100 vh-75 dt">
           <div class="tc dtc v-mid">
             <h1 class="f2 f1-l fw2 mw6 ph3 center white-90 mb0 lh-title">
@@ -31,8 +31,8 @@
                   </h1>
                   <div class="f5 f4-l lh-copy" v-html="$md.render(post.excerpt)" />
                 </div>
-                <div v-if="post.feature_image" class="pl3-ns order-1 order-2-ns mb4 mb0-ns w-100 w-40-ns">
-                  <img :src="post.feature_image" class="db h5" alt="Featured Image">
+                <div v-if="post.feature_image" class="pl3-ns order-1 order-2-ns mb4 mb0-ns w-40">
+                  <img v-lazy="`${post.feature_image}&w=400&fit=crop`" class="db h-auto w6-ns" alt="Featured Image">
                 </div>
               </div>
             </a>
@@ -94,6 +94,9 @@ export default {
     },
     ghostSettings () {
       return this.$store.state.ghostSettings
+    },
+    backgroundImage () {
+      return require(`@/assets${this.$store.state.globals.background}`)
     }
   }
 }

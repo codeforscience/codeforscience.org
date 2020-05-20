@@ -39,13 +39,16 @@ export default async () => {
     ** Plugins to load before mounting the App
     */
     plugins: [
+      { src: '~/plugins/vue-lazyload' }
     ],
     /*
     ** Nuxt.js dev-modules
     */
     buildModules: [
       // Doc: https://github.com/nuxt-community/eslint-module
-      '@nuxtjs/eslint-module'
+      '@nuxtjs/eslint-module',
+      'nuxt-purgecss'
+      // '@aceforth/nuxt-optimized-images',
     ],
     /*
     ** Nuxt.js modules
@@ -63,6 +66,10 @@ export default async () => {
     },
     markdownit: {
       injected: true
+    },
+    optimizedImages: {
+      optimizeImages: true,
+      inlineImageLimit: -1
     },
     /*
     ** Build configuration
