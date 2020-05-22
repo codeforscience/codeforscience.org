@@ -47,8 +47,8 @@ export default async () => {
     buildModules: [
       // Doc: https://github.com/nuxt-community/eslint-module
       '@nuxtjs/eslint-module',
-      'nuxt-purgecss'
-      '@aceforth/nuxt-optimized-images',
+      'nuxt-purgecss',
+      '@aceforth/nuxt-optimized-images'
     ],
     /*
     ** Nuxt.js modules
