@@ -14,7 +14,7 @@
           <picture>
             <source :srcSet="require('@/assets/img/background.jpg?webp')" type="image/webp" />
             <source :srcSet="require('@/assets/img/background.jpg?resize&sizes[]=500&sizes[]=100&sizes[]=1600').srcSet" type="image/jpeg" />
-            <img class="absolute z-0 left-0 top-0 w-100 h-100" style="object-fit:cover;" :src="require('@/assets/img/background.jpg?resize&sizes[]=500&sizes[]=100&sizes[]=1600').src" />
+            <img alt="" class="absolute z-0 left-0 top-0 w-100 h-100" style="object-fit:cover;" :src="require('@/assets/img/background.jpg?resize&sizes[]=500&sizes[]=100&sizes[]=1600').src" />
           </picture>
         </div>
       </div>

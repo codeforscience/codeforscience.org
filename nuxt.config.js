@@ -41,7 +41,8 @@ export default async () => {
     ** Global CSS
     */
     css: [
-      'tachyons/css/tachyons.css'
+      'tachyons/css/tachyons.css',
+      'css/fonts.css'
     ],
     /*
     ** Plugins to load before mounting the App
@@ -86,6 +87,7 @@ export default async () => {
       ** You can extend webpack config here
       */
       extend (config, ctx) {
+        extractCSS: true
       }
     },
     /*
