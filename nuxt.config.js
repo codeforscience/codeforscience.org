@@ -11,6 +11,9 @@ export default async () => {
     ** Headers of the page
     */
     head: {
+      htmlAttrs: {
+        lang: 'en'
+      },
       title: settings.title,
       meta: [
         { charset: 'utf-8' },

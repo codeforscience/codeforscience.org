@@ -134,6 +134,7 @@ nav .nuxt-link-exact-active {
        url('/fonts/WorkSans-Regular.woff') format('woff');
   font-weight: normal;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -142,6 +143,7 @@ nav .nuxt-link-exact-active {
     url('/fonts/WorkSans-Medium.woff') format('woff');
   font-weight: bold;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -150,6 +152,7 @@ nav .nuxt-link-exact-active {
     url('/fonts/WorkSans-Light.woff') format('woff');
   font-weight: 400;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -158,6 +161,7 @@ nav .nuxt-link-exact-active {
     url('/fonts/WorkSans-Medium.woff') format('woff');
   font-weight: 500;
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
@@ -166,5 +170,6 @@ nav .nuxt-link-exact-active {
     url('/fonts/WorkSans-Bold.woff') format('woff');
   font-weight: 700;
   font-style: normal;
+  font-display: swap;
 }
 </style>
