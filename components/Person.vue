@@ -45,7 +45,7 @@ export default {
       const person = this.$store.state.people
         .filter(x => x.name === this.name)[0]
       if (!person.image) return
-      return require(`@/assets${person.image}`)
+      return require(`@/assets${person.image}?resize&size=146`).src
     }
   }
 }
