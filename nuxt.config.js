@@ -48,7 +48,7 @@ export default async () => {
       // Doc: https://github.com/nuxt-community/eslint-module
       '@nuxtjs/eslint-module',
       'nuxt-purgecss'
-      // '@aceforth/nuxt-optimized-images',
+      '@aceforth/nuxt-optimized-images',
     ],
     /*
     ** Nuxt.js modules
@@ -68,8 +68,7 @@ export default async () => {
       injected: true
     },
     optimizedImages: {
-      optimizeImages: true,
-      inlineImageLimit: -1
+      optimizeImages: true
     },
     /*
     ** Build configuration

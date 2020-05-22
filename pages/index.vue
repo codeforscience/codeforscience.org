@@ -96,7 +96,7 @@ export default {
       return this.$store.state.ghostSettings
     },
     backgroundImage () {
-      return require(`@/assets${this.$store.state.globals.background}`)
+      return require(`@/assets/img/background.jpg`)
     }
   }
 }
