@@ -1,9 +1,9 @@
 <template>
   <div>
     <section class="flex flex-column black-70">
-      <div class="cover bg-center" :style="`background-image:url(${backgroundImage})`">
-        <div class="bt b--black-10 ph3 ph5-l pb4 pb5-ns pt2 bg-black-60 w-100 vh-75 dt">
-          <div class="tc dtc v-mid">
+      <div class="">
+        <div class="relative overflow-hidden bt b--black-10 w-100 vh-75 dt">
+          <div class="relative z-5 ph3 ph5-l pb4 pb5-ns pt2 bg-black-60 w-100 h-100 tc dtc v-mid">
             <h1 class="f2 f1-l fw2 mw6 ph3 center white-90 mb0 lh-title">
               {{ globals.tagline }}
             </h1>
@@ -11,6 +11,11 @@
               {{ globals.description }}
             </h2>
           </div>
+          <picture>
+            <source :srcSet="require('@/assets/img/background.jpg?webp')" type="image/webp" />
+            <source :srcSet="require('@/assets/img/background.jpg?resize&sizes[]=500&sizes[]=100&sizes[]=1600').srcSet" type="image/jpeg" />
+            <img class="absolute z-0 left-0 top-0 w-100 h-100" style="object-fit:cover;" :src="require('@/assets/img/background.jpg?resize&sizes[]=500&sizes[]=100&sizes[]=1600').src" />
+          </picture>
         </div>
       </div>
       <div class="bt b--black-10 ph3 ph5-ns pb4 pb5-ns pt3">

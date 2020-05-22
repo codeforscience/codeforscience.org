@@ -21,7 +21,12 @@ export default async () => {
         { hid: 'description', name: 'description', content: settings.description }
       ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        {
+          rel: "preconnect",
+          href: "https://images.unsplash.com/",
+          crossorigin: true
+        }
       ]
     },
     sitemap: {
