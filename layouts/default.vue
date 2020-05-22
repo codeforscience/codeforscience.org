@@ -19,7 +19,7 @@ export default {
     <header class="bb bn-l b--black-10 w-100 mw5-l vh-100-l pa3 pa4-l pl3-l top-0 sticky-l">
       <div class="flex flex-column-l justify-between mw-100">
         <nuxt-link to="/" class="dim flex-none-l items-center mw-100 mw5">
-          <img :src="require(`@/assets${this.$store.state.globals.logo}?inline`)" :title="ghostSettings.title" class=" mw-100-l mw5s">
+          <img :src="require(`@/assets/img/Blue-logo-black-text-stacked.png?inline&resize&size=250`)" :title="ghostSettings.title" class=" mw-100-l mw5s">
         </nuxt-link>
         <h3 class="f5 f4-ns fw4 bt b--gray pv3-l pv2 mw5 dn db-l">
           {{ ghostSettings.description }}
@@ -122,49 +122,5 @@ nav .nuxt-link-exact-active {
   justify-content: center;
   height: calc(100vh - 8rem);
   width: 100vw;
-}
-
-/**
- * typography
- */
-
-@font-face {
-  font-family: 'Work Sans';
-  src: url('/fonts/WorkSans-Regular.woff2') format('woff2'),
-       url('/fonts/WorkSans-Regular.woff') format('woff');
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Work Sans';
-  src: url('/fonts/WorkSans-Medium.woff2') format('woff2'),
-    url('/fonts/WorkSans-Medium.woff') format('woff');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Work Sans';
-  src: url('/fonts/WorkSans-Light.woff2') format('woff2'),
-    url('/fonts/WorkSans-Light.woff') format('woff');
-  font-weight: 400;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Work Sans';
-  src: url('/fonts/WorkSans-Medium.woff2') format('woff2'),
-    url('/fonts/WorkSans-Medium.woff') format('woff');
-  font-weight: 500;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Work Sans';
-  src: url('/fonts/WorkSans-Bold.woff2') format('woff2'),
-    url('/fonts/WorkSans-Bold.woff') format('woff');
-  font-weight: 700;
-  font-style: normal;
 }
 </style>

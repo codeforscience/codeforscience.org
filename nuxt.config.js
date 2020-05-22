@@ -11,6 +11,9 @@ export default async () => {
     ** Headers of the page
     */
     head: {
+      htmlAttrs: {
+        lang: 'en'
+      },
       title: settings.title,
       meta: [
         { charset: 'utf-8' },
@@ -18,7 +21,26 @@ export default async () => {
         { hid: 'description', name: 'description', content: settings.description }
       ],
       link: [
-        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }
+        { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+        {
+          rel: "preconnect",
+          href: "https://images.unsplash.com/",
+          crossorigin: true
+        },
+        {
+          rel: 'preload',
+          href: '/fonts/WorkSans-Regular.woff2',
+          crossorigin: true,
+          as: 'font',
+          type: 'font/woff2'
+        },
+        {
+          rel: 'preload',
+          href: '/fonts/WorkSans-Medium.woff2',
+          crossorigin: true,
+          as: 'font',
+          type: 'font/woff2'
+        }
       ]
     },
     sitemap: {
@@ -33,7 +55,8 @@ export default async () => {
     ** Global CSS
     */
     css: [
-      'tachyons/css/tachyons.css'
+      'tachyons/css/tachyons.css',
+      'css/fonts.css'
     ],
     /*
     ** Plugins to load before mounting the App
@@ -47,8 +70,8 @@ export default async () => {
     buildModules: [
       // Doc: https://github.com/nuxt-community/eslint-module
       '@nuxtjs/eslint-module',
-      'nuxt-purgecss'
-      // '@aceforth/nuxt-optimized-images',
+      'nuxt-purgecss',
+      '@aceforth/nuxt-optimized-images'
     ],
     /*
     ** Nuxt.js modules
@@ -68,8 +91,7 @@ export default async () => {
       injected: true
     },
     optimizedImages: {
-      optimizeImages: true,
-      inlineImageLimit: -1
+      optimizeImages: true
     },
     /*
     ** Build configuration
@@ -79,6 +101,7 @@ export default async () => {
       ** You can extend webpack config here
       */
       extend (config, ctx) {
+        extractCSS: true
       }
     },
     /*
