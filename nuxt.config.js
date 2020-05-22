@@ -26,6 +26,20 @@ export default async () => {
           rel: "preconnect",
           href: "https://images.unsplash.com/",
           crossorigin: true
+        },
+        {
+          rel: 'preload',
+          href: '/fonts/WorkSans-Regular.woff2',
+          crossorigin: true,
+          as: 'font',
+          type: 'font/woff2'
+        },
+        {
+          rel: 'preload',
+          href: '/fonts/WorkSans-Medium.woff2',
+          crossorigin: true,
+          as: 'font',
+          type: 'font/woff2'
         }
       ]
     },
