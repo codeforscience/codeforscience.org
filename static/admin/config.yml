@@ -82,7 +82,7 @@ collections:
       - {label: 'Bio', name: 'bio', widget: 'markdown', buttons: ['link'], required: false}
       - {label: 'Image', name: 'image', widget: 'image', required: false }
       - {label: 'Image Alt Text', name: 'imageAltText', widget: 'string', required: false, hint: "Briefly describe the image; this will be read by screen readers." }
-      - {label: 'Website', name: 'website', widget: 'string', required: false, hint: 'If this is present, both image and name will link there.', pattern: ['^(http:\/\/www\.|https:\/\/www\.|http:\/\/|https:\/\/|dat:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$', hint: 'Must be a valid URL.']}
+      - {label: 'Website', name: 'website', widget: 'string', required: false, hint: 'If this is present, both image and name will link there.'}
 
 
   - label: 'Collection: Jobs'
