@@ -25,6 +25,11 @@
         {
           "title": "Projects",
           "url": "projects"
+        },
+        {
+          "external": true,
+          "title": "Event Fund",
+          "url": "https://eventfund.codeforscience.org"
         }
       ]
     },
@@ -48,7 +53,7 @@
   "programs": [
     {
       "title": "Collaborative Communities",
-      "description": "We develop [open resources to support the public interest technology community](https://osaos.codeforscience.org/) and advocate for open infrastructure.  We also  facilitate collaborations between organizations and provide strategic support to community-driven initiatives engaging with technology. Every quarter we host a community call to bring people, projects, and external speakers together to discuss the open public interest technology ecosystem."
+      "description": "CS&S runs a [conference fund](https://eventfund.codeforscience.org) to support events that promote inclusion and broaden participation in open data science that drives scholarship. We develop [open resources to support the public interest technology community](https://osaos.codeforscience.org/) and advocate for open infrastructure.  We also  facilitate collaborations between organizations and provide strategic support to community-driven initiatives engaging with technology."
     },
     {
       "title": "Sponsored Projects",
