@@ -37,7 +37,7 @@
                   <div class="f5 f4-l lh-copy" v-html="$md.render(post.excerpt)" />
                 </div>
                 <div v-if="post.feature_image" class="pl3-ns order-1 order-2-ns mb4 mb0-ns w-40">
-                  <img v-lazy="`${post.feature_image}&w=400&fit=crop`" class="db h-auto w6-ns" alt="Featured Image">
+                  <img v-lazy="`${post.feature_image.includes('unsplash') ? `${post.feature_image}&w=400&fit=crop` : post.feature_image}`" class="db h-auto w6-ns" alt="Featured Image">
                 </div>
               </div>
             </a>
@@ -87,6 +87,7 @@ import { ghostAPI } from '@/util/ghost'
 export default {
   async asyncData () {
     const posts = await ghostAPI().posts.browse({
+      limit: 3,
       filter: 'featured:true'
     })
     return {
