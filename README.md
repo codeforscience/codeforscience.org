@@ -2,13 +2,40 @@
 
 > Code for Science &amp; Society website
 
-To update content on homepage, navigation/globals, jobs, and people, visit https://codeforscience.org/admin/.
+## Content Mangement
 
-Other content is managed via ghost blog at https://blog.codeforscience.org/ghost/
+To update content on homepage, navigation/globals, jobs, and people, visit the CMS at https://codeforscience.org/admin/. Other pages and blog content is managed in Ghost. See details below.
+
+#### Homepage
+
+* Blog posts marked **featured** in Ghost are shown on the homepage under latest news
+* Other content on the homepage can be [edited in the CMS](https://codeforscience.org/admin/#/collections/content/entries/globals) under `Content > Globals`
+
+#### Navigation
+
+* Navigation is set in the CMS
+* See below on how to add a new page
+
+#### People
+
+* Add a new person to the [Collection: People](https://codeforscience.org/admin/#/collections/people)
+* Then they must be added to the [Content > People Page](https://codeforscience.org/admin/#/collections/content/entries/People) to be displayed
+
+#### Job
+
+* Add a new job to the [Collection: Jobs](https://codeforscience.org/admin/#/collections/jobs)
+* If there are jobs, the "Jobs" item will appear in the navigation. If there are not jobs, it will not be displayed.
+
+#### Pages
+
+Content for about page, project descriptions, and additional pages are managed via ghost blog at https://blog.codeforscience.org/ghost/
 
 * Fiscally Sponsored Projects
-* "Latest news" section shows latest featured posts
+  * Each project is a "page" in ghost with the `#fsp` tag.
+  * To add a new project, add a new page and tag wit with `#fsp`
 * Other full content pages such as "About CS&S" can also be edited in the ghost pages list. 
+* To add a new page, create and publish a page in Ghost. It will be available at the url specificied in ghost. It can then be added to the navigation in the CMS.
+
 
 ## Development
 
