@@ -51,13 +51,13 @@ collections:
         name: 'People'
         file: 'assets/content/pages/people.json'
         fields:
-          - {label: Title, name: title, widget: string}
+          - {label: Title, name: title, widget: string, required: false}
           - label: 'Group'
             name: 'group'
             widget: 'list'
             fields:
               - {label: 'Group Name', name: name, widget: string}
-              - {label: 'Description', name: 'description', widget: 'markdown', buttons: ['link']}
+              - {label: 'Description', name: 'description', widget: 'markdown', buttons: ['link'], required: false}
               - label: "People"
                 name: "people"
                 widget: "relation"
