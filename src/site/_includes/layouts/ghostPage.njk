@@ -1,0 +1,51 @@
+{% extends 'layouts/default.njk' %}
+
+{% set title = ghostPage.title %}
+{% set codeinjection_head = ghostPage.codeinjection_head %}
+{% set codeinjection_foot = ghostPage.codeinjection_foot %}
+
+{% block content %}
+  <section class="lh-copy mw8">
+      {% if ghostPage.feature_image %}
+          <figure class="post-feature-image">
+              <img src="{{ ghostPage.feature_image }}" alt="{{ title }}">
+          </figure>
+      {% endif %}
+    <div class="pa3 ph5-ns">
+      <h2 class="f2 ttu fw5">
+        {{ title }}
+      </h2>
+      <article ref="pageContent" class="lh-copy measure-wide">
+        {{ content | safe }}
+      </article>
+    </div>
+  </section>
+{% endblock %}
+
+{%- block seo -%}
+    <!--Twitter Card-->
+    <meta name="twitter:site" content="{{ site.twitter }}">
+    <meta name="twitter:creator" content="{{ ghostPage.primary_author.twitter }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ site.url + page.url }}">
+    <meta name="twitter:title" content="{{ title }} – {{ site.title }}">
+    <meta name="twitter:description" content="{{ ghostPage.excerpt }}">
+    <meta name="twitter:image" content="{{ ghostPage.feature_image }}">
+
+    <!--Schema-->
+    <link rel="author" href="{{ ghostPage.primary_author.website }}">
+    <link rel="publisher" href="{{ site.url }}">
+    <meta itemprop="name" content="{{ title }} – {{ site.title }}">
+    <meta itemprop="description" content="{{ ghostPage.excerpt }}">
+    <meta itemprop="image" content="{{ ghostPage.feature_image }}">
+
+    <!-- Facebook OpenGraph -->
+    <meta property="og:url" content="{{ site.url + page.url }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ title }} – {{ site.title }}">
+    <meta property="og:image" content="{{ ghostPage.feature_image }}">
+    <meta property="og:description" content="{{ ghostPage.excerpt }}">
+    <meta property="og:site_name" content="{{ site.title }}">
+    <meta property="og:locale" content="{{ site.lang }}">
+    <meta property="article:author" content="{{ site.url }}">
+{%- endblock -%}

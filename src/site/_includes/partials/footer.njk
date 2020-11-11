@@ -1,0 +1,23 @@
+<footer class="pa3 ph5-ns black-70">
+  <div class="pt2 mb2 flex flex-wrap justify-between mw7 ml5-l">
+      {% for section in site.footerNav %}
+        <div class="w-auto">
+          <h4 class="f5 mb0">
+            {{ section.title }}
+          </h4>
+          <ul class="list pl0">
+            {% for item in section.links %}
+              <li class="lh-copy">
+                <a class="f6 mid-gray link" {% if page.url == item.url %}aria-current="page"{% endif %} href="{{ item.url }}">
+                    {{ item.title }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endfor %}
+    <p class="lh-copy f6 black-60">
+      {{ site.footer }}
+    </p>
+  </div>
+</footer>

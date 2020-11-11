@@ -1,0 +1,130 @@
+{
+  "blogUrl": "https://blog.codeforscience.org/",
+  "contact": {
+    "twitter": "@codeforsociety",
+    "email": "hi@codeforsociety.org"
+  },
+  "mainNav": [
+    {
+      "links": [
+        {
+          "title": "News",
+          "url": "https://blog.codeforscience.org",
+          "external": true
+        },
+        {
+          "title": "Sponsored Projects",
+          "url": "/sponsored-projects"
+        },
+        {
+          "title": "Event Fund",
+          "url": "https://eventfund.codeforscience.org",
+          "external": true
+        },
+        {
+          "title": "About",
+          "url": "/about"
+        }
+      ]
+    },
+    {
+      "links": [
+        {
+          "title": "Board of Directors",
+          "url": "/board"
+        },
+        {
+          "title": "Team",
+          "url": "/staff"
+        },
+        {
+          "title": "Jobs",
+          "url": "/jobs"
+        }
+      ]
+    }
+  ],
+  "footerNav": [
+    {
+      "title": "Resources",
+      "links": [
+        {
+          "external": true,
+          "title": "Event Fund",
+          "url": "https://eventfund.codeforscience.org"
+        },
+        {
+          "title": "OSAOS Handbook",
+          "url": "https://osaos.codeforscience.org",
+          "external": true
+        },
+        {
+          "title": "Blog",
+          "url": "https://blog.codeforscience.org",
+          "external": true
+        }
+      ]
+    },
+    {
+      "title": "Organization",
+      "links": [
+        {
+          "title": "People",
+          "url": "/staff"
+        },
+        {
+          "title": "Board",
+          "url": "/board"
+        },
+        {
+          "title": "About",
+          "url": "/about"
+        },
+        {
+          "title": "Contact",
+          "url": "/contact"
+        }
+      ]
+    },
+    {
+      "title": "Community",
+      "links": [
+        {
+          "title": "Projects",
+          "url": "/sponsored-projects"
+        },
+        {
+          "title": "Github",
+          "url": "https://github.com/codeforscience",
+          "external": true
+        },
+        {
+          "title": "Twitter",
+          "url": "https://twitter.com/codeforsociety",
+          "external": true
+        },
+        {
+          "title": "csv,conf",
+          "url": "https://csvconf.com/",
+          "external": true
+        }
+      ]
+    }
+  ],
+  "logo": "/img/Blue-logo-black-text-stacked.png",
+  "background": "/img/background.jpg",
+  "tagline": "Strategic Support for Public Technology",
+  "programs": [
+    {
+      "title": "Collaborative Communities",
+      "description": "CS&S runs a [conference fund](https://eventfund.codeforscience.org) to support events that promote inclusion and broaden participation in open data science that drives scholarship. We develop [open resources to support the public interest technology community](https://osaos.codeforscience.org/) and advocate for open infrastructure.  We also  facilitate collaborations between organizations and provide strategic support to community-driven initiatives engaging with technology."
+    },
+    {
+      "title": "Sponsored Projects",
+      "description": "We bring together innovative projects committed to the public good and provide them with financial and administrative and strategic support. We support communities across domains, enabling projects to learn from each other to develop future-facing solutions that empower people. We are looking for projects that want to participate in our community, who value collaboration over competition, and who are aligned with our mission."
+    }
+  ],
+  "title": "Code for Science & Society",
+  "footer": " Code for Science and Society, Inc. is a registered US 501(c)(3) public charity.",
+  "homeDescription": "We are a US-based 501(c)(3) nonprofit supporting open collaboration in public interest technology through fiscal sponsorship and other programs supporting sustainable open source. We envision a future where communities build technology infrastructure that reflect their values."
+}

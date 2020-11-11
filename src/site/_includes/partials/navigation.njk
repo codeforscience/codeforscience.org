@@ -1,0 +1,38 @@
+{% from "partials/icon.njk" import icon %}
+<nav class="site-nav bb b--black-10" role=navigation id="menu">
+  <div class="mw8 pv2 pv3-ns ph2 ph5-l mb2 flex flex-wrap justify-around">
+      {% for section in site.mainNav %}
+        <div class="w-100 w-40-ns ph2 ph3-ns br-ns">
+          <ul class="list pl0">
+            {% for item in section.links %}
+              <li class="lh-copy">
+                <a class="fw5 f5 link" {% if page.url == item.url %}aria-current="page"{% endif %} href="{{ item.url }}">
+                    {{ item.title }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        </div>
+      {% endfor %}
+      <div class="w-100 w-20-ns ph2 ph3-ns">
+        <ul class="list pl0">
+          {% if site.twitter %}
+          <li class="lh-copy">
+            <a class="fw5 f5 link flex items-center" href="https://twitter.com/{{ site.twitter | replace("@", "") }}" target="_blank" rel="noopener noreferrer">
+              <span class="mr1 mt2">{{ icon({ id: 'twitter' }) }}</span> {{ site.twitter }}
+            </a>
+          </li>
+          {% endif %}
+          <li class="lh-copy">
+          <a class="v-top fw5 f5 link flex items-center" href="https://feedly.com/i/subscription/feed/{{ site.url }}/feed.xml" target="_blank" rel="noopener noreferrer">
+              <span class="mr1 mt1">{{ icon({ id: 'rss' }) }}</span> RSS
+          </a>
+        </li>
+        <li class="lh-copy">
+        <a class="v-top fw5 f5 link flex items-center" href="https://blog.codeforscience.org/#subscribe" target="_blank" rel="noopener noreferrer">
+            <span class="mr1 mt2">{{ icon({ id: 'email' }) }}</span> Newsletter
+        </a>
+      </li>
+      </ul>
+    </div>
+</nav>

@@ -1,0 +1,11 @@
+---
+pagination:
+  data: collections.ghostPages
+  size: 1
+  alias: 'ghostPage'
+  addAllPagesToCollections: true
+layout: 'layouts/ghostPage.njk'
+permalink: '{{ ghostPage.url }}'
+---
+
+{{ ghostPage.html | safe if ghostPage.html else "Page content not found" }}

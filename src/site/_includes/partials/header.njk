@@ -1,0 +1,28 @@
+{% from "partials/icon.njk" import icon %}
+
+<header class="bb bn-l b--black-10 w-100 mw5-l vh-100-l pa3 pa4-l pl3-l top-0 sticky-l relative bg-white">
+  <div class="flex flex-column-l justify-between mw-100">
+    <a href="/" class="dim flex-none-l items-center mw-100 mw5">
+      {% if site.logo %}<img src="{{ site.logo }}" title="{{ site.title }}" class="mw-100-l mw5-s">{% endif %}
+    </a>
+  </div>
+  <div class="w-100 pt1 pb3 pb4-l">
+    <nav class="f4 fw6 mw5-l">
+      {# <a href="#"  title="People">
+        Menu
+      </a> #}
+      <button id="toggle" class="menu-btn pointer fw6 pl0 bg-white mr3 pt2 lh-copy link dim black-70 db-l bn" aria-expanded="false" aria-controls="menu"><span class="mr1 mt2">{{ icon({ id: 'nav' }) }}</span> Menu</button>
+      <a href="/about" class="mr3 pt2 lh-copy fw6 link dim black-70 db-l ba bl-0 bt-0 br-0 b--dotted b--black-30" title="About">
+        About Us
+      </a>
+      <a href="/donate" class="mr3 pt2 lh-copy fw6 link dim black-70 db-l ba bl-0 bt-0 br-0 b--dotted b--black-30" title="People">
+        Donate
+      </a>
+    </nav>
+  </div>
+  {% if page.url == '/' %}
+  <h3 class="mt3 f5 f4-ns fw4 bt b--gray pv3-l pv2 mw5 dn db-l">
+    {{ site.description }}
+  </h3>
+  {% endif %}
+</header>

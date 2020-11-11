@@ -1,39 +1,44 @@
 {
-  "name": "css-website",
-  "version": "1.0.0",
-  "description": "Code for Science &amp; Society website",
-  "author": "Joe Hand",
-  "private": true,
+  "name": "codeforscience.org",
+  "version": "4.0.0",
+  "description": "An Eleventy site. With data from ghost and netlify cms.",
+  "author": "Code for Science and Society",
+  "license": "MIT",
   "scripts": {
-    "dev": "nuxt",
-    "build": "nuxt build",
-    "start": "nuxt start",
-    "generate": "nuxt generate",
-    "lint": "eslint --ext .js,.vue --ignore-path .gitignore ."
+    "start": "npm run dev",
+    "dev": "cross-env ELEVENTY_ENV=dev eleventy --serve",
+    "build": "cross-env ELEVENTY_ENV=prod eleventy",
+    "seed": "cross-env ELEVENTY_ENV=seed eleventy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/codeforscience/codeforscience.org"
   },
   "dependencies": {
-    "@aceforth/nuxt-optimized-images": "^1.0.1",
-    "@nuxtjs/dotenv": "^1.4.1",
-    "@nuxtjs/markdownit": "^1.2.9",
-    "@nuxtjs/sitemap": "^2.4.0",
-    "@tryghost/content-api": "^1.4.1",
-    "nuxt": "^2.13.2",
+    "@11ty/eleventy": "^0.11.1",
+    "@11ty/eleventy-plugin-rss": "^1.0.9",
+    "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.4",
+    "@tryghost/content-api": "^1.4.10",
+    "autoprefixer": "^10.0.2",
+    "axios": "^0.21.0",
+    "cssnano": "^4.1.10",
+    "dotenv": "^8.2.0",
+    "eleventy-plugin-lazyimages": "^2.1.0",
+    "eleventy-plugin-local-images": "^0.4.0",
+    "html-minifier": "^4.0.0",
+    "luxon": "^1.25.0",
+    "postcss": "^8.1.7",
+    "postcss-color-mix": "^1.1.0",
+    "postcss-comment": "^2.0.0",
+    "postcss-import": "^13.0.0",
+    "postcss-mixins": "^7.0.1",
+    "postcss-simple-vars": "^6.0.1",
+    "precss": "^4.0.0",
     "tachyons": "^4.12.0",
-    "vue-lazyload": "^1.3.3"
+    "uglify-js": "^3.11.5",
+    "xml2js": "^0.4.23"
   },
   "devDependencies": {
-    "@nuxtjs/eslint-config": "^3.0.0",
-    "@nuxtjs/eslint-module": "^2.0.0",
-    "babel-eslint": "^10.1.0",
-    "eslint": "^7.3.1",
-    "eslint-plugin-nuxt": "^1.0.0",
-    "imagemin-mozjpeg": "^9.0.0",
-    "imagemin-pngquant": "^9.0.0",
-    "imagemin-svgo": "^8.0.0",
-    "lqip-loader": "^2.2.0",
-    "nuxt-purgecss": "^1.0.0",
-    "responsive-loader": "^1.2.0",
-    "sharp": "^0.25.4",
-    "webp-loader": "^0.6.0"
+    "cross-env": "^7.0.2"
   }
 }

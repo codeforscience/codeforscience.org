@@ -1,0 +1,74 @@
+/* @import '_variables.css'; */
+@import 'fonts.css';
+/* @import 'blog.css'; */
+@import '../../../../node_modules/tachyons/css/tachyons.css';
+
+:root {
+  --background: #fff;
+  --foreground: #000;
+}
+
+body {
+  font-family: 'Work Sans', sans-serif;
+  background: var(--background);
+  color: var(--foreground);
+}
+
+a {
+  text-decoration: none;
+}
+
+nav .nuxt-link-exact-active {
+  opacity: 0.6;
+}
+
+.sticky {
+  position:sticky;
+}
+
+@media screen and (min-width: 60em) {
+  .sticky-l { position:sticky; }
+}
+
+.site-nav {
+  transition: max-height 0.6s cubic-bezier(0.37, 0, 0.63, 1);
+  max-height:0;
+  overflow:hidden;
+  background-color: #2e3440;
+  color:#e5e9f0;
+}
+
+.site-nav a {
+  color:#e5e9f0;
+}
+
+.site-nav a:visited {
+  color:#d8dee9;
+}
+
+.site-nav.open {
+  max-height:500px;
+}
+
+.no-js .site-nav {
+  max-height:500px;
+}
+
+.menu-btn {
+  line-height: inherit;
+}
+
+.viewport-top {
+  position:sticky;
+}
+/**
+ * not found
+ */
+
+.notfound {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: calc(100vh - 8rem);
+  width: 100vw;
+}

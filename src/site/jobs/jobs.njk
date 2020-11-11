@@ -1,0 +1,12 @@
+---
+pagination:
+  data: jobs
+  resolve: values
+  size: 1
+  alias: job
+  addAllPagesToCollections: true
+layout: 'layouts/ghostPage.njk'
+permalink: 'jobs/{{ job.title | slug }}/'
+---
+
+{{ job.body | markdown | safe  if job.body else "Page content not found" }}
