@@ -27,6 +27,7 @@ class People {
                         class="br-100 h4 w4 dib ba b--black-05 pa2"
                         title="${person.name}"
                         src="${person.image}"
+                        width="150"
                         style="object-fit:cover;"
                         >` : ''}
                     <h1 class="f3 mb2">

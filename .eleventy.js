@@ -41,15 +41,6 @@ module.exports = function(config) {
   // Assist RSS feed template
   config.addPlugin(pluginRSS);
 
-  // Copy images over from Ghost
-  config.addPlugin(localImages, {
-    distPath: "dist",
-    assetPath: "/img",
-    selector: "img",
-    attribute: "data-src", // Lazy images attribute
-    verbose: false
-  });
-
   if (process.env.ELEVENTY_ENV === 'production') {
     // Apply performance attributes to images
     config.addPlugin(lazyImages, {
@@ -63,6 +54,16 @@ module.exports = function(config) {
     // minify the html output
     config.addTransform("htmlmin", require("./src/utils/minify-html.js"));
   }
+
+  // eleventy-plugin-lazyimages must run before eleventy-plugin-local-images
+  // Copy images over from Ghost
+  config.addPlugin(localImages, {
+    distPath: "dist",
+    assetPath: "/img",
+    selector: "img",
+    attribute: "data-src", // Lazy images attribute
+    verbose: false
+  });
 
   // Inline CSS
   config.addFilter("cssmin", code => {
@@ -230,7 +231,6 @@ module.exports = function(config) {
    */
   config.setBrowserSyncConfig({
     notify: false,
-    open: true,
     snippetOptions: {
       rule: {
         match: /<\/head>/i,

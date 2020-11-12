@@ -24,7 +24,7 @@ class Donate {
   }
 
   render({donatePage, donorbox}) {
-    return `<section class="black-70">
+    return `<section class="black-70 mw8">
       <div class="flex flex-wrap justify-between pl3 pl5-l pb3 pt3 pt5-ns">
           <div class="pr2 pr3-l">
             <h2 class="f2 ttu fw5 mt0">
