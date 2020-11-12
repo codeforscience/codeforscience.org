@@ -24,6 +24,13 @@ a {
   text-decoration: none;
 }
 
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
 nav .nuxt-link-exact-active {
   opacity: 0.6;
 }
@@ -34,6 +41,10 @@ nav .nuxt-link-exact-active {
 
 @media screen and (min-width: 60em) {
   .sticky-l { position:sticky; }
+}
+
+.home-bg {
+  object-fit:cover;
 }
 
 .site-nav {

@@ -15,7 +15,7 @@ class Home {
     };
   }
 
-  render({posts, site}) {
+  async render({posts, site}) {
     return `
   <div>
     <section class="flex flex-column black-70">
@@ -29,7 +29,7 @@ class Home {
               ${ site.homeDescription }
             </h3>
           </div>
-          <img alt="" class="absolute z-0 left-0 top-0 w-100 h-100" style="object-fit:cover;" src="${site.cover_image}" />
+          ${await this.Image(site.cover_image, " ", "home-bg absolute z-0 left-0 top-0 w-100 h-100")}
         </div>
       </div>
       <div class="bt b--black-10 ph3 ph5-ns pb4 pb5-ns pt3">
@@ -37,7 +37,7 @@ class Home {
           <h3 class="ph3 ph0-l f2 ttu fw5">
             Latest News
           </h3>
-          ${posts.map(post => {
+          ${await Promise.all(posts.map(async post => {
             return `<article
               id="${post.slug}"
               class="pv4 bt bb b--black-10 ph3 ph0-l"
@@ -54,13 +54,13 @@ class Home {
                   </div>
                   ${post.feature_image ? `
                     <div class="pl3-ns order-1 order-2-ns mb4 mb0-ns w-40">
-                    <img src="${post.feature_image.includes('unsplash') ? `${post.feature_image}&w=400&fit=crop` : post.feature_image }" class="db h-auto w6-ns" alt="Featured Image">
+                    ${await this.Image(post.feature_image, post.title, "db h-auto w6-ns")}
                     </div>`
                   : ``}
                 </div>
               </a>
             </article>`
-          }).join('')}
+          })).then((arr) => arr.join(''))}
           <a
             href="${site.blogUrl}"
             class="mt4 f4 no-underline black bg-animate hover-bg-black hover-white inline-flex items-center pa3 ba border-box"

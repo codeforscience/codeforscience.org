@@ -9,6 +9,13 @@ module.exports = function(content, outputPath) {
       removeComments: true,
       collapseWhitespace: true,
       minifyCSS: true,
+      removeAttributeQuotes: true,
+      collapseBooleanAttributes: true,
+      sortClassName: true,
+      sortAttributes: true,
+      html5: true,
+      decodeEntities: true,
+      removeOptionalTags: true,
     });
     return minified;
   }

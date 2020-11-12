@@ -26,7 +26,7 @@ class People {
     }
   }
 
-  render({projectsPage, projects}) {
+  async render({projectsPage, projects}) {
     return ` <div>
       <section class="flex flex-column black-70">
         <div class="ph3 ph5-l pb4 pb5-ns pt3">
@@ -37,14 +37,14 @@ class People {
             <div class="mb5 f5 f4-l lh-copy measure-wide">
               ${projectsPage.html}
             </div>
-            ${projects.map((project) => {
+            ${await Promise.all(projects.map(async (project) => {
               return `<article
                 class="pv4 bt b--black-10 ph3 ph0-l mw7"
               >
                 <div class="black-70">
                   <div class="flex flex-column flex-row-ns items-center">
                     <div class="order-2 order-1-ns mb4 mb0-ns w-100 w-40-ns">
-                      <img src="${project.feature_image}" class="db mw5-l mw4 center" style="max-height:150px;" alt="Featured Image">
+                      ${await this.Image(project.feature_image, project.title, "db mw5-l mw4 center")}
                     </div>
                     <div class="w-100 w-60-ns pl4-l pr3-ns order-1 order-2-ns">
                       <h1 class="f4 mt0 lh-title">
@@ -57,7 +57,7 @@ class People {
                   </div>
                 </div>
               </article>`
-            }).join('')}
+            })).then((arr) => arr.join(''))}
           </section>
         </div>
     </section>

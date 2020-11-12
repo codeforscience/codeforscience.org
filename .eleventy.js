@@ -5,6 +5,7 @@ const fs = require("fs");
 const pluginRSS = require("@11ty/eleventy-plugin-rss");
 const localImages = require("eleventy-plugin-local-images");
 const lazyImages = require("eleventy-plugin-lazyimages");
+const Image = require("@11ty/eleventy-img");
 const ghostContentAPI = require("@tryghost/content-api");
 let md = require("markdown-it")({
   html: true
@@ -86,6 +87,84 @@ module.exports = function(config) {
       callback(null, code);
     }
   });
+
+  config.addJavaScriptFunction("Avatar", async (src, alt) => {
+    if (!alt) {
+      throw new Error(`Missing \`alt\` on myImage from: ${src}`);
+    }
+
+    let stats = await Image(src, {
+      widths: [50, 150, 300],
+      formats: ["jpeg", "webp"],
+      urlPath: "/img/",
+      outputDir: "./dist/img/",
+    });
+
+    let lowestSrc = stats["jpeg"][0];
+
+    const srcset = Object.keys(stats).reduce(
+      (acc, format) => ({
+        ...acc,
+        [format]: stats[format].reduce(
+          (_acc, curr) => `${_acc} ${curr.srcset} ,`,
+          ""
+        ),
+      }),
+      {}
+    );
+
+    const source = `<source type="image/webp" data-srcset="${srcset["webp"]}" >`;
+
+    const img = `<img
+      class="lazy br-100 h4 w4 dib ba b--black-05 pa2"
+      style="object-fit:cover;"
+      alt="${alt}"
+      src="${lowestSrc.url}"
+      data-srcset="${srcset["jpeg"]}"
+      width="${lowestSrc.width}"
+      height="${lowestSrc.height}">`;
+
+    return `<div class="image-wrapper"><picture> ${source} ${img} </picture></div>`;
+  });
+  config.addJavaScriptFunction("Image", async (src, alt, cls) => {
+      if (!alt) {
+        throw new Error(`Missing \`alt\` on myImage from: ${src}`);
+      }
+
+      let stats = await Image(src, {
+        widths: [25, 320, 640, 960, 1200, 1800, 2400],
+        formats: ["jpeg", "webp"],
+        urlPath: "/img/",
+        outputDir: "./dist/img/",
+      });
+
+      let lowestSrc = stats["jpeg"][0];
+
+      const srcset = Object.keys(stats).reduce(
+        (acc, format) => ({
+          ...acc,
+          [format]: stats[format].reduce(
+            (_acc, curr) => `${_acc} ${curr.srcset} ,`,
+            ""
+          ),
+        }),
+        {}
+      );
+
+      const source = `<source type="image/webp" data-srcset="${srcset["webp"]}" >`;
+
+      const img = `<img
+        class="lazy ${cls}"
+        alt="${alt}"
+        src="${lowestSrc.url}"
+        data-src="${lowestSrc.url}"
+        data-sizes='(min-width: 1024px) 1024px, 100vw'
+        data-srcset="${srcset["jpeg"]}"
+        width="${lowestSrc.width}"
+        height="${lowestSrc.height}">`;
+
+      return `<div class="image-wrapper"><picture> ${source} ${img} </picture></div>`;
+    });
 
   config.addFilter("getReadingTime", text => {
     const wordsPerMinute = 200;
