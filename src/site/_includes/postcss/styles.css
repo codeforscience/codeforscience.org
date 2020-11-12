@@ -37,11 +37,17 @@ nav .nuxt-link-exact-active {
 }
 
 .site-nav {
-  transition: max-height 0.6s cubic-bezier(0.37, 0, 0.63, 1);
+  transition:max-height 0.6s cubic-bezier(0.37, 0, 0.63, 1);
   max-height:0;
   overflow:hidden;
   background-color: #2e3440;
   color:#e5e9f0;
+}
+
+.site-nav > div {
+  visibility: hidden;
+  opacity: 0;
+  transition: visibility 0s linear 300ms, opacity 300ms;
 }
 
 .site-nav a {
@@ -56,12 +62,33 @@ nav .nuxt-link-exact-active {
   max-height:500px;
 }
 
+.site-nav.open > div {
+  visibility:visible;
+  opacity: 1;
+}
+
 .no-js .site-nav {
   max-height:500px;
 }
+.no-js .site-nav > div {
+  visibility:visible;
+  opacity: 1;
+}
+.no-js .menu-btn {
+  visibility:hidden;
+}
+
 
 .menu-btn {
   line-height: inherit;
+}
+
+.menu-btn svg {
+	transition: transform 0.6s cubic-bezier(0.87, 0, 0.13, 1);
+}
+
+.menu-btn.open svg {
+  transform: rotate(90deg) ;
 }
 
 .viewport-top {

@@ -1,6 +1,6 @@
 {% from "partials/icon.njk" import icon %}
 
-<header class="bb bn-l b--black-10 w-100 mw5-l vh-100-l pa3 pa4-l pl3-l top-0 sticky-l relative bg-white">
+<header class="bb bn-l b--black-10 w-100 mw5-l vh-100-l pa3 pa4-l pl3-l top-0 sticky-l bg-white">
   <div class="flex flex-column-l justify-between mw-100">
     <a href="/" class="dim flex-none-l items-center mw-100 mw5">
       {% if site.logo %}<img src="{{ site.logo }}" title="{{ site.title }}" width="200" class="mw-100-l mw5-s">{% endif %}
@@ -8,10 +8,12 @@
   </div>
   <div class="w-100 pt1 pb3 pb4-l">
     <nav class="f4 fw6 mw5-l">
-      {# <a href="#"  title="People">
-        Menu
-      </a> #}
-      <button id="toggle" class="menu-btn pointer fw6 pl0 bg-white mr3 pt2 lh-copy link dim black-70 db-l bn" aria-expanded="false" aria-controls="menu"><span class="mr1 mt2">{{ icon({ id: 'nav' }) }}</span> Menu</button>
+      <button id="toggle" class="menu-btn pointer fw6 pl0 bg-white mr3 pt2 lh-copy link dim black-70 db-l bn"
+            aria-label="open navigation" aria-expanded="false" aria-controls="menu">
+            <span class="mr1 mt2"><svg class="w1" data-icon="chevronRight" viewBox="0 0 32 32" style="fill:currentcolor">
+        <title>chevronRight icon</title>
+        <path d="M12 1 L26 16 L12 31 L8 27 L18 16 L8 5 z" />
+      </svg></span> Menu</button>
       <a href="/about" class="mr3 pt2 lh-copy fw6 link dim black-70 db-l ba bl-0 bt-0 br-0 b--dotted b--black-30" title="About">
         About Us
       </a>

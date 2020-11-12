@@ -60,10 +60,10 @@
     </head>
     <body {% if bodyClass %}class="{{ bodyClass }}"{% endif %}>
         {% include "partials/icons.njk" %}
-        <div class="viewport pb5">
+        <div class="viewport pb4">
             <div class="viewport-top mb7 z-5 bg-white bb b--black-10">
                {% include "partials/navigation.njk" %}
-                <main class="relative flex flex-column flex-row-l">
+                <main id="main" class="relative flex flex-column flex-row-l">
                     {% include "partials/header.njk" %}
                     <div class="min-vh-100-l w-100 bl b--black-10">
                         {% block content %}
