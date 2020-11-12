@@ -23,7 +23,7 @@ const stripDomain = url => {
 };
 
 const blogDomain = url => {
-  return "news" + stripDomain(url)
+  return "/news" + stripDomain(url)
 };
 
 module.exports = function(config) {
@@ -35,20 +35,11 @@ module.exports = function(config) {
   config.addLayoutAlias('default', 'layouts/default.njk');
 
   // Add some utility filters
-  config.addFilter("squash", require("./src/utils/filters/squash.js") );
+  // config.addFilter("squash", require("./src/utils/filters/squash.js") );
   config.addFilter("dateDisplay", require("./src/utils/filters/date.js") );
 
   // Assist RSS feed template
   config.addPlugin(pluginRSS);
-
-  // Apply performance attributes to images
-  config.addPlugin(lazyImages, {
-    scriptSrc: '/js/lazysizes.min.js',
-    transformImgPath: (src) => {
-      if (src.startsWith('/')) return `./src/public${src}`
-      return src
-    }
-  });
 
   // Copy images over from Ghost
   config.addPlugin(localImages, {
@@ -59,8 +50,19 @@ module.exports = function(config) {
     verbose: false
   });
 
-  // minify the html output
-  config.addTransform("htmlmin", require("./src/utils/minify-html.js"));
+  if (process.env.ELEVENTY_ENV === 'production') {
+    // Apply performance attributes to images
+    config.addPlugin(lazyImages, {
+      scriptSrc: '/js/lazysizes.min.js',
+      transformImgPath: (src) => {
+        if (src.startsWith('/')) return `./src/public${src}`
+        return src
+      }
+    });
+
+    // minify the html output
+    config.addTransform("htmlmin", require("./src/utils/minify-html.js"));
+  }
 
   // Inline CSS
   config.addFilter("cssmin", code => {
@@ -221,8 +223,39 @@ module.exports = function(config) {
   //   return collection;
   // });
 
-  // make the seed target act like prod
-  env = (env=="seed") ? "prod" : env;
+  /**
+   * Override BrowserSync Server options
+   *
+   * @link https://www.11ty.dev/docs/config/#override-browsersync-server-options
+   */
+  config.setBrowserSyncConfig({
+    notify: false,
+    open: true,
+    snippetOptions: {
+      rule: {
+        match: /<\/head>/i,
+        fn: function (snippet, match) {
+          return snippet + match
+        },
+      },
+    },
+    // Set local server 404 fallback
+    callbacks: {
+      ready: function (err, browserSync) {
+        const content_404 = fs.readFileSync('dist/404.html')
+
+        browserSync.addMiddleware('*', (req, res) => {
+          // Provides the 404 content without redirect.
+          res.writeHead(404, {
+            'Content-Type': 'text/html'
+          });
+          res.write(content_404)
+          res.end()
+        })
+      },
+    },
+  })
+
   return {
     dir: {
       input: "src/site",

@@ -52,7 +52,6 @@
         {% endset %}
         <style>{{ css | cssmin | safe }}</style>
 
-
         <script>document.documentElement.classList.remove('no-js');</script>
 
         {{ site.codeinjection_head | safe if site.codeinjection_head }}

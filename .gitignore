@@ -4,6 +4,7 @@
 # build artefacts
 /dist
 /src/site/_includes/css
+.lazyimages.json
 
 # secrets and errors
 .env
