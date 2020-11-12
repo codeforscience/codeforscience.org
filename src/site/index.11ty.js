@@ -29,7 +29,7 @@ class Home {
               ${ site.homeDescription }
             </h3>
           </div>
-          ${await this.Image(site.cover_image, " ", "home-bg absolute z-0 left-0 top-0 w-100 h-100")}
+          ${await this.Image(site.cover_image, "", "home-bg absolute z-0 left-0 top-0 w-100 h-100")}
         </div>
       </div>
       <div class="bt b--black-10 ph3 ph5-ns pb4 pb5-ns pt3">

@@ -89,8 +89,9 @@ module.exports = function(config) {
   });
 
   config.addJavaScriptFunction("Avatar", async (src, alt) => {
-    if (!alt) {
-      throw new Error(`Missing \`alt\` on myImage from: ${src}`);
+    if(alt === undefined) {
+      // You bet we throw an error on missing alt (alt="" works okay)
+      throw new Error(`Missing \`alt\` on image from: ${src}`);
     }
 
     let stats = await Image(src, {
@@ -127,8 +128,9 @@ module.exports = function(config) {
     return `<div class="image-wrapper"><picture> ${source} ${img} </picture></div>`;
   });
   config.addJavaScriptFunction("Image", async (src, alt, cls) => {
-      if (!alt) {
-        throw new Error(`Missing \`alt\` on myImage from: ${src}`);
+      if(alt === undefined) {
+        // You bet we throw an error on missing alt (alt="" works okay)
+        throw new Error(`Missing \`alt\` on image from: ${src}`);
       }
 
       let stats = await Image(src, {
