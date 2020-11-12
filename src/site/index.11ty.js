@@ -25,9 +25,9 @@ class Home {
             <h2 class="f2 f1-l fw2 mw6 ph3 center white-90 mb0 lh-title">
               ${ site.tagline }
             </h2>
-            <h4 class="f5 f4-ns fw5 measure-wide ph3 center white-80 mt3 mb5">
+            <h3 class="f5 f4-ns fw5 measure-wide ph3 center white-80 mt3 mb5">
               ${ site.homeDescription }
-            </h4>
+            </h3>
           </div>
           <img alt="" class="absolute z-0 left-0 top-0 w-100 h-100" style="object-fit:cover;" src="${site.cover_image}" />
         </div>
@@ -45,9 +45,9 @@ class Home {
               <a class="black-70 dim" href="${site.blogUrl + post.slug}">
                 <div class="flex flex-column flex-row-ns">
                   <div class="w-100 w-60-ns pr3-ns order-2 order-1-ns">
-                    <h1 class="f4 mt0 lh-title">
+                    <h5 class="f4 mt0 lh-title">
                       ${ post.title }
-                    </h1>
+                    </h5>
                     <div class="f5 f4-l lh-copy">
                     ${this.markdown(post.excerpt)}
                     </div>
@@ -78,9 +78,9 @@ class Home {
           <div class="cf">
           ${site.programs.map(program => {
             return `<article class="pv2 fl w-100 w-50-l pr0 pr5-l">
-              <h2 class="f5 f4-ns fw6 mb3">
+              <h5 class="f5 f4-ns fw6 mb3">
                 ${program.title}
-              </h2>
+              </h5>
               <div class="f5 f4-l lh-copy measure mt0">
                 ${this.markdown(program.description)}
               </div>
