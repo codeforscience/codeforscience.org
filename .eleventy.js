@@ -42,10 +42,13 @@ module.exports = function(config) {
   config.addPlugin(pluginRSS);
 
   // Apply performance attributes to images
-  // config.addPlugin(lazyImages, {
-  //   cacheFile: "",
-  //   verbose: false
-  // });
+  config.addPlugin(lazyImages, {
+    scriptSrc: '/js/lazysizes.min.js',
+    transformImgPath: (src) => {
+      if (src.startsWith('/')) return `./src/public${src}`
+      return src
+    }
+  });
 
   // Copy images over from Ghost
   config.addPlugin(localImages, {

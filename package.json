@@ -26,6 +26,7 @@
     "eleventy-plugin-lazyimages": "^2.1.0",
     "eleventy-plugin-local-images": "^0.4.0",
     "html-minifier": "^4.0.0",
+    "lazysizes": "^5.2.2",
     "luxon": "^1.25.0",
     "postcss": "^8.1.7",
     "postcss-color-mix": "^1.1.0",

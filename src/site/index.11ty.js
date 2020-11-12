@@ -1,7 +1,7 @@
 class Home {
   data() {
     return {
-      title: 'CSS',
+      title: 'CS&S',
       layout: 'layouts/base.njk',
       templateEngineOverride: "11ty.js",
       pagination: {
@@ -22,21 +22,21 @@ class Home {
       <div class="">
         <div class="relative overflow-hidden w-100 vh-75 dt">
           <div class="relative z-5 ph3 ph5-l pb4 pb5-ns pt2 bg-black-60 w-100 h-100 tc dtc v-mid">
-            <h1 class="f2 f1-l fw2 mw6 ph3 center white-90 mb0 lh-title">
+            <h2 class="f2 f1-l fw2 mw6 ph3 center white-90 mb0 lh-title">
               ${ site.tagline }
-            </h1>
-            <h2 class="f5 f4-ns fw5 measure-wide ph3 center white-80 mt3 mb5">
-              ${ site.homeDescription }
             </h2>
+            <h4 class="f5 f4-ns fw5 measure-wide ph3 center white-80 mt3 mb5">
+              ${ site.homeDescription }
+            </h4>
           </div>
-          <img alt="" class="absolute z-0 left-0 top-0 w-100 h-100" style="object-fit:cover;" src="/img/background.jpg" />
+          <img alt="" class="absolute z-0 left-0 top-0 w-100 h-100" style="object-fit:cover;" src="${site.cover_image}" />
         </div>
       </div>
       <div class="bt b--black-10 ph3 ph5-ns pb4 pb5-ns pt3">
         <section class="mw8 center">
-          <h2 class="ph3 ph0-l f2 ttu fw5">
+          <h3 class="ph3 ph0-l f2 ttu fw5">
             Latest News
-          </h2>
+          </h3>
           ${posts.map(post => {
             return `<article
               id="${post.slug}"
@@ -54,7 +54,7 @@ class Home {
                   </div>
                   ${post.feature_image ? `
                     <div class="pl3-ns order-1 order-2-ns mb4 mb0-ns w-40">
-                    <img src="${post.feature_image}" class="db h-auto w6-ns" alt="Featured Image">
+                    <img src="${post.feature_image.includes('unsplash') ? `${post.feature_image}&w=400&fit=crop` : post.feature_image }" class="db h-auto w6-ns" alt="Featured Image">
                     </div>`
                   : ``}
                 </div>

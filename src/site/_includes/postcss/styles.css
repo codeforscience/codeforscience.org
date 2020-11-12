@@ -1,7 +1,13 @@
-/* @import '_variables.css'; */
-@import 'fonts.css';
+/*
+
+TODO
+Not using PostCSS yet.
+Import was not working via njk
+
+@import '_variables.css'; */
+/* @import './fonts.css';
 /* @import 'blog.css'; */
-@import '../../../../node_modules/tachyons/css/tachyons.css';
+/* @import '../../../../node_modules/tachyons/css/tachyons.css'; */ */
 
 :root {
   --background: #fff;
