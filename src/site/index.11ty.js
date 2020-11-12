@@ -45,9 +45,9 @@ class Home {
               <a class="black-70 dim" href="${site.blogUrl + post.slug}">
                 <div class="flex flex-column flex-row-ns">
                   <div class="w-100 w-60-ns pr3-ns order-2 order-1-ns">
-                    <h5 class="f4 mt0 lh-title">
+                    <h4 class="f4 mt0 lh-title">
                       ${ post.title }
-                    </h5>
+                    </h4>
                     <div class="f5 f4-l lh-copy">
                     ${this.markdown(post.excerpt)}
                     </div>

@@ -72,14 +72,16 @@ module.exports = function(config) {
   })
 
   // compress and combine js files
-  config.addFilter("jsmin", function(code) {
-    const UglifyJS = require("uglify-js");
-    let minified = UglifyJS.minify(code);
-      if( minified.error ) {
-          console.log("UglifyJS error: ", minified.error);
-          return code;
-      }
-      return minified.code;
+  config.addNunjucksAsyncFilter("jsmin", async function(code, callback) {
+    const { minify } = require("terser")
+    try {
+      const minified = await minify(code);
+      callback(null, minified.code);
+    } catch (err) {
+      console.error("Terser error: ", err);
+      // Fail gracefully.
+      callback(null, code);
+    }
   });
 
   config.addFilter("getReadingTime", text => {
