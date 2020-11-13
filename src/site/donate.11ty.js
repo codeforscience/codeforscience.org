@@ -18,7 +18,7 @@ class Donate {
       title: 'Donate',
       layout: 'layouts/base.njk',
       templateEngineOverride: "11ty.js",
-      codeinjection_head: '<link rel="preconnect" href="https://donorbox.org"><script defer src="https://donorbox.org/widget.js" paypalExpress="true"></script>',
+      codeinjection_head: '<link rel="preconnect" href="https://donorbox.org"><script defer src="https://donorbox.org/widget.js" paypalExpress="false"></script>',
       donorbox: "https://donorbox.org/embed/code-for-science-society?default_interval=m",
       donatePage
     }
