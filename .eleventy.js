@@ -51,10 +51,10 @@ module.exports = function(config) {
         return src
       }
     });
-
-    // minify the html output + css
-    config.addPlugin(require("./src/utils/minify-html.js"));
   }
+
+  // minify the html output + css
+  config.addPlugin(require("./src/utils/minify-html.js"));
 
   // eleventy-plugin-lazyimages must run before eleventy-plugin-local-images
   // Copy images over from Ghost

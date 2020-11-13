@@ -26,30 +26,33 @@
             <meta name="twitter:url" content="{{ site.url + page.url }}">
             <meta name="twitter:title" content="{{ title + " – " + site.title if title else title }}">
             <meta name="twitter:description" content="{{ site.description }}">
-            <meta name="twitter:image" content="{{ site.cover_image }}">
+            <meta name="twitter:image" content="{{ site.cover_image | replace('https://blog.codeforscience.org/content/images/2018/10/', '/img/') }}">
 
             <!--Schema-->
             <link rel="author" href="{{ site.url }}">
             <link rel="publisher" href="{{ site.url }}">
             <meta itemprop="name" content="{{ title + " – " + site.title if title else title }}">
             <meta itemprop="description" content="{{ site.description }}">
-            <meta itemprop="image" content="{{ site.cover_image }}">
+            <meta itemprop="image" content="{{ site.cover_image | replace('https://blog.codeforscience.org/content/images/2018/10/', '/img/') }}">
 
             <!-- Facebook OpenGraph -->
             <meta property="og:url" content="{{site.url + page.url}}">
             <meta property="og:type" content="website">
             <meta property="og:title" content="{{ title + " – " + site.title if title else title }}">
-            <meta property="og:image" content="{{ site.cover_image }}">
+            <meta property="og:image" content="{{ site.cover_image | replace('https://blog.codeforscience.org/content/images/2018/10/', '/img/') }}">
             <meta property="og:description" content="{{ site.description }}">
             <meta property="og:site_name" content="{{ site.title }}">
             <meta property="og:locale" content="{{ site.lang }}">
             <meta property="article:author" content="{{ site.url }}">
         {%- endblock -%}
 
+        <link rel="preconnect" href="/" crossorigin>
         <script>document.documentElement.classList.remove('no-js');</script>
 
         {{ site.codeinjection_head | safe if site.codeinjection_head }}
         {{ codeinjection_head | safe if codeinjection_head }}
+
+        <!-- css is inserted by optimize-html custom plugin -->
     </head>
     <body {% if bodyClass %}class="{{ bodyClass }}"{% endif %}>
         {% include "partials/icons.njk" %}
