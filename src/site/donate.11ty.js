@@ -34,7 +34,7 @@ class Donate {
               ${donatePage.html}
             </div>
           </div>
-          <script defer src="https://donorbox.org/widget.js" paypalExpress="true"></script><iframe allowpaymentrequest="" frameborder="0" height="900px" name="donorbox" scrolling="no" seamless="seamless" src="${ donorbox }" style="max-width: 500px; min-width: 310px; max-height:none!important" width="100%"></iframe>
+          <script src="https://donorbox.org/widget.js" paypalExpress="true"></script><iframe loading="lazy" allowpaymentrequest="" frameborder="0" height="900px" name="donorbox" scrolling="no" seamless="seamless" src="${ donorbox }" style="max-width: 500px; min-width: 310px; max-height:none!important" width="100%"></iframe>
       </div>
       <footer class="mw7 center pb2 pb3-ns pl3">
         <p class="f6 i">Code for Science and Society is a registered US 501(c)(3) nonprofit.
