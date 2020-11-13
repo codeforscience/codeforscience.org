@@ -14,13 +14,11 @@ class People {
           <h3 class="f2 db w-100 mb2">
             ${ group.name }
           </h3>
-          ${ group.description ? `class="f4 db w-100 mt0">${ group.description }</h5>` : ''}
+          ${ group.description ? `<h5 class="f4 db w-100 mt0">${ group.description }</h5>` : ''}
           ${await Promise.all(group.people.map(async (name) => {
               const person = Object.values(people).filter(x => x.name === name)[0]
               if (!person) return
-              return `<article
-                  class="center bg-white br3 pa2 pa3-ns mv3 ba b--black-10"
-                >
+              return `<article class="center bg-white br3 pa2 pa3-ns mv3 ba b--black-10">
                   <div class="tc">
                     ${await this.Avatar(`./src/public${person.image}`, person.name)}
                     <h1 class="f3 mb2">
@@ -31,7 +29,7 @@ class People {
                     </h2>
                   </div>
                   ${person.bio ?
-                    `<div class="measure-narrow center f6 black-70">${this.markdown(person.bio)}</>` : ''}
+                    `<div class="measure-narrow center f6 black-70">${this.markdown(person.bio)}</div>` : ''}
                 </article>`
             })).then((arr) => arr.join(''))}
         </section>`

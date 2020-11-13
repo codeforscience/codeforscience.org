@@ -52,8 +52,8 @@ module.exports = function(config) {
       }
     });
 
-    // minify the html output
-    config.addTransform("htmlmin", require("./src/utils/minify-html.js"));
+    // minify the html output + css
+    config.addPlugin(require("./src/utils/minify-html.js"));
   }
 
   // eleventy-plugin-lazyimages must run before eleventy-plugin-local-images
