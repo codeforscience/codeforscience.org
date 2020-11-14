@@ -5,6 +5,7 @@
 /dist
 /src/site/_includes/css
 .lazyimages.json
+.cache
 
 # secrets and errors
 .env

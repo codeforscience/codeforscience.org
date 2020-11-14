@@ -89,6 +89,10 @@ nav .nuxt-link-exact-active {
   visibility:hidden;
 }
 
+.logo {
+  font-size:0;
+  min-height:50px;
+}
 
 .menu-btn {
   line-height: inherit;
