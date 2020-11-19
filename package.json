@@ -19,6 +19,7 @@
     "@11ty/eleventy-plugin-rss": "^1.0.9",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.4",
     "@tryghost/content-api": "^1.4.10",
+    "airtable": "^0.10.1",
     "autoprefixer": "^10.0.2",
     "axios": "^0.21.0",
     "cssnano": "^4.1.10",
