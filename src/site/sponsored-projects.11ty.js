@@ -54,6 +54,15 @@ class People {
                       <div class="f5 f4-l lh-copy">
                       ${project['Description (css.org)']}
                       <p>Website: <a href="${project['Website']}">${project['Website'].replace(/^https?:\/\//,'')}</a></p>
+                        <a
+                          href="/donate/${this.slug(project['Display Name'])}/"
+                          class="mt3 f5 no-underline black dim inline-flex items-center pa2 ba border-box"
+                        >
+                          Donate
+                          <svg class="w1 pl2" data-icon="chevronRight" viewBox="0 0 32 32" style="fill:currentcolor">
+                            <path d="M12 1 L26 16 L12 31 L8 27 L18 16 L8 5 z" />
+                          </svg>
+                        </a>
                       </div>
                     </div>
                   </div>

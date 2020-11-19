@@ -67,7 +67,6 @@ class Home {
           >
             Read More on the Blog
             <svg class="w1 pl2" data-icon="chevronRight" viewBox="0 0 32 32" style="fill:currentcolor">
-              <title>chevronRight icon</title>
               <path d="M12 1 L26 16 L12 31 L8 27 L18 16 L8 5 z" />
             </svg>
           </a>
@@ -77,13 +76,22 @@ class Home {
         <div class="pv3 pb5-l mw8 center">
           <div class="cf">
           ${site.programs.map(program => {
-            return `<article class="pv2 fl w-100 w-50-l pr0 pr5-l">
+            return `<article class="pv2 fl w-100 w-50-l pr0 pr5-l flex flex-column">
               <h5 class="f5 f4-ns fw6 mb3">
                 ${program.title}
               </h5>
               <div class="f5 f4-l lh-copy measure mt0">
                 ${this.markdown(program.description)}
               </div>
+              <div><a
+                href="${program.ctaLink}"
+                class="mt3 f5 no-underline black dim inline-flex items-center pa2 ba border-box"
+              >
+                ${program.ctaText}
+                <svg class="w1 pl2" data-icon="chevronRight" viewBox="0 0 32 32" style="fill:currentcolor">
+                  <path d="M12 1 L26 16 L12 31 L8 27 L18 16 L8 5 z" />
+                </svg>
+              </a></div>
             </article>`
           }).join('')}
           </div>

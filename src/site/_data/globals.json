@@ -117,11 +117,15 @@
   "programs": [
     {
       "title": "Collaborative Communities",
-      "description": "CS&S runs a [conference fund](https://eventfund.codeforscience.org) to support events that promote inclusion and broaden participation in open data science that drives scholarship. We develop [open resources to support the public interest technology community](https://osaos.codeforscience.org/) and advocate for open infrastructure.  We also  facilitate collaborations between organizations and provide strategic support to community-driven initiatives engaging with technology."
+      "description": "CS&S runs a [conference fund](https://eventfund.codeforscience.org) to support events that promote inclusion and broaden participation in open data science that drives scholarship. We develop [open resources to support the public interest technology community](https://osaos.codeforscience.org/) and advocate for open infrastructure.  We also  facilitate collaborations between organizations and provide strategic support to community-driven initiatives engaging with technology.",
+      "ctaLink": "https://eventfund.codeforscience.org/",
+      "ctaText": "Learn about the Event Fund"
     },
     {
       "title": "Sponsored Projects",
-      "description": "We bring together innovative projects committed to the public good and provide them with financial and administrative and strategic support. We support communities across domains, enabling projects to learn from each other to develop future-facing solutions that empower people. We are looking for projects that want to participate in our community, who value collaboration over competition, and who are aligned with our mission."
+      "description": "We bring together innovative projects committed to the public good and provide them with financial and administrative and strategic support. We support communities across domains, enabling projects to learn from each other to develop future-facing solutions that empower people. We are looking for projects that want to participate in our community, who value collaboration over competition, and who are aligned with our mission.",
+      "ctaLink": "/sponsored-projects",
+      "ctaText": "View Sponsored Projects"
     }
   ],
   "title": "Code for Science & Society",
