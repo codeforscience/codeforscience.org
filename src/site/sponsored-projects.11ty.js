@@ -53,7 +53,7 @@ class People {
                       </h1>
                       <div class="f5 f4-l lh-copy">
                       ${project['Description (css.org)']}
-                      <p>Website: <a href="${project['Website']}">${project['Website'].replace(/^https?:\/\//,'')}</a>
+                      <p>Website: <a href="${project['Website']}">${project['Website'].replace(/^https?:\/\//,'')}</a></p>
                       </div>
                     </div>
                   </div>
@@ -79,7 +79,7 @@ class People {
                       </h1>
                       <div class="f5 f4-l lh-copy">
                       ${project['Description (css.org)']}
-                      <p>Website: <a href="${project['Website']}">${project['Website'].replace(/^https?:\/\//,'')}</a>
+                      <p>Website: <a href="${project['Website']}">${project['Website'].replace(/^https?:\/\//,'')}</a></p>
                       </div>
                     </div>
                   </div>
