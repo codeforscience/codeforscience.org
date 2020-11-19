@@ -4,7 +4,7 @@
 
 ## Content Mangement
 
-To update content on homepage, navigation/globals, jobs, and people, visit the CMS at https://codeforscience.org/admin/. Other pages and blog content is managed in Ghost. See details below.
+To update content on homepage, navigation/globals, jobs, and people, visit the CMS at https://codeforscience.org/admin/. Other pages and blog content is managed in Ghost. Project details are managed in Airtable. See details below.
 
 #### Homepage
 
@@ -25,13 +25,17 @@ To update content on homepage, navigation/globals, jobs, and people, visit the C
 
 * Add a new job to the [Collection: Jobs](https://codeforscience.org/admin/#/collections/jobs)
 
+#### Projects
+
+* Managed in Airtable (CSS Main Database > Projects)
+* Only displays projects in the `Website` data view`
+* Order they show up on `sponsored-projects` page mirrors order on Airtable
+* `alumni` tag is special to put projects in that section
+
 #### Pages
 
 Content for about page, project descriptions, and additional pages are managed via ghost blog at https://blog.codeforscience.org/ghost/
 
-* Fiscally Sponsored Projects
-  * Each project is a "page" in ghost with the `#fsp` tag.
-  * To add a new project, add a new page and tag wit with `#fsp`
 * Other full content pages such as "About CS&S" can also be edited in the ghost pages list.
 * To add a new page, create and publish a page in Ghost. It will be available at the url specificied in ghost. It can then be added to the navigation in the CMS.
 * Use the tag `#no-11ty` in Ghost if you create a page in ghost that should not be added to the site.
@@ -57,6 +61,7 @@ To run the website locally, create an `.env` file with the following variables f
 GHOST_KEY=''
 GHOST_URI=''
 SITE_URL=''
+AIRTABLE_API_KEY=
 ```
 
 To use your own install, edit the `.env` config file with your credentials. You can find your `contentApiKey` in the "Integrations" screen in Ghost Admin. The minimum required version for Ghost is `2.10.0` in order to use this starter without issues.
