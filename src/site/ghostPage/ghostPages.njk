@@ -4,8 +4,53 @@ pagination:
   size: 1
   alias: 'ghostPage'
   addAllPagesToCollections: true
-layout: 'layouts/ghostPage.njk'
+layout: 'layouts/base.njk'
 permalink: '{{ ghostPage.url }}'
 ---
 
-{{ ghostPage.html | safe if ghostPage.html else "Page content not found" }}
+{% set title = ghostPage.title %}
+{% set codeinjection_head = ghostPage.codeinjection_head %}
+{% set codeinjection_foot = ghostPage.codeinjection_foot %}
+
+{% block content %}
+<section class="black-70 mw8">
+  <div class="pl3 pl4-ns pv3 pv5-ns">
+    <article class="measure measure-wide-l">
+      <h1 class="f3 ttu fw5 mt0">
+        {{ ghostPage.title }}
+      </h1>
+      <div class="f5 f4-l lh-copy">
+        {{ ghostPage.html | safe if ghostPage.html else "Page content not found" }}
+      </div>
+    </article>
+  </div>
+</section>
+{% endblock %}
+
+{%- block seo -%}
+  <!--Twitter Card-->
+  <meta name="twitter:site" content="{{ site.twitter }}">
+  <meta name="twitter:creator" content="{{ ghostPage.primary_author.twitter }}">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="{{ site.url + page.url }}">
+  <meta name="twitter:title" content="{{ title }} – {{ site.title }}">
+  <meta name="twitter:description" content="{{ ghostPage.excerpt }}">
+  <meta name="twitter:image" content="{{ ghostPage.feature_image }}">
+
+  <!--Schema-->
+  <link rel="author" href="{{ ghostPage.primary_author.website }}">
+  <link rel="publisher" href="{{ site.url }}">
+  <meta itemprop="name" content="{{ title }} – {{ site.title }}">
+  <meta itemprop="description" content="{{ ghostPage.excerpt }}">
+  <meta itemprop="image" content="{{ ghostPage.feature_image }}">
+
+  <!-- Facebook OpenGraph -->
+  <meta property="og:url" content="{{ site.url + page.url }}">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ title }} – {{ site.title }}">
+  <meta property="og:image" content="{{ ghostPage.feature_image }}">
+  <meta property="og:description" content="{{ ghostPage.excerpt }}">
+  <meta property="og:site_name" content="{{ site.title }}">
+  <meta property="og:locale" content="{{ site.lang }}">
+  <meta property="article:author" content="{{ site.url }}">
+{%- endblock -%}
