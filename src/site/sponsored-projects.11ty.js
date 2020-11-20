@@ -18,7 +18,7 @@ class People {
     //   filter: 'tag:hash-fsp'
     // })
     return {
-      title: 'Projects',
+      title: projectsPage.title,
       layout: 'layouts/base.njk',
       templateEngineOverride: "11ty.js",
       // projects,

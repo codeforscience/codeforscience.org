@@ -5,10 +5,12 @@ pagination:
     alias: project
     addAllPagesToCollections: true
 permalink: "donate/{{ project['Display Name'] | slug }}/"
-layout: 'layouts/base.njk'
 codeinjection_head: '<link rel="preconnect" href="https://donorbox.org"><script defer src="https://donorbox.org/widget.js" paypalExpress="false"></script>'
 ---
+{% extends 'layouts/default.njk' %}
+{% set title = project['Display Name'] %}
 
+{% block content %}
 <section class="black-70 mw8">
   <div class="flex flex-wrap justify-between pl3 pl5-l pb3 pt3 pt5-ns">
     <div class="pr2 pr3-l measure-narrow">
@@ -36,3 +38,31 @@ Donations are tax deductible to the extent allowed by law in US.
 Tax ID 81-3791683</p>
   </footer>
 </section>
+{% endblock %}
+
+{%- block seo -%}
+    <!--Twitter Card-->
+    <meta name="twitter:site" content="{{ site.twitter }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="{{ site.url + page.url }}">
+    <meta name="twitter:title" content="{{ title }} – {{ site.title }}">
+    <meta name="twitter:description" content="{{ project['Description (css.org)'] }}">
+    <meta name="twitter:image" content="{{ project['Logo'][0].url }}">
+
+    <!--Schema-->
+    <link rel="author" href="{{ project['Website'] }}">
+    <link rel="publisher" href="{{ site.url }}">
+    <meta itemprop="name" content="{{ title }} – {{ site.title }}">
+    <meta itemprop="description" content="{{ project['Description (css.org)'] }}">
+    <meta itemprop="image" content="{{ project['Logo'][0].url }}">
+
+    <!-- Facebook OpenGraph -->
+    <meta property="og:url" content="{{ site.url + page.url }}">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="{{ title }} – {{ site.title }}">
+    <meta property="og:image" content="{{ project['Logo'][0].url }}">
+    <meta property="og:description" content="{{ project['Description (css.org)'] }}">
+    <meta property="og:site_name" content="{{ site.title }}">
+    <meta property="og:locale" content="{{ site.lang }}">
+    <meta property="article:author" content="{{ site.url }}">
+{%- endblock -%}
