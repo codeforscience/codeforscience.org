@@ -8,26 +8,22 @@ permalink: "donate/{{ project['Display Name'] | slug }}/"
 codeinjection_head: '<link rel="preconnect" href="https://donorbox.org"><script defer src="https://donorbox.org/widget.js" paypalExpress="false"></script>'
 ---
 {% extends 'layouts/default.njk' %}
-{% set title = project['Display Name'] %}
+{% set title = "Donate - " + project['Display Name'] %}
 
 {% block content %}
 <section class="black-70 mw8">
   <div class="flex flex-wrap justify-between pl3 pl5-l pb3 pt3 pt5-ns">
+    <h2 class="f3-l f4 fw5 mt0 w-100 tc-ns">
+      Donate - {{project['Display Name']}}
+    </h2>
     <div class="pr2 pr3-l measure-narrow">
       {% if project['Logo'] %}
-        <h2 class="f2 ttu fw5 mt0 dn ">
-          {{project['Display Name']}}
-        </h2>
         {% ProjectImage project['Logo'][0].url, project['Display Name'], ''%}
       {% else %}
-        <h2 class="f2 ttu fw5 mt0">
-          {{project['Display Name']}}
-        </h2>
       {% endif %}
       <div class="mt2 f5 f4-l lh-copy">
         {% if project['Donate Text (css.org)'] %}{{project['Donate Text (css.org)']}}{% else %}{{project['Description (css.org)']}}{% endif %}
         <p>Website: <a href="{{project['Website']}}">{{project['Website'] | replace( r/(https?:\/\/[^ ]+)/ ,'$1')}}</a></p>
-
       </div>
     </div>
     <iframe loading="lazy" allowpaymentrequest="" frameborder="0" height="900px" name="donorbox" scrolling="no" seamless="seamless" src="{{ project['Donorbox Campaign'] }}" style="max-width: 500px; min-width: 310px; max-height:none!important" width="100%"></iframe>
@@ -45,21 +41,21 @@ Tax ID 81-3791683</p>
     <meta name="twitter:site" content="{{ site.twitter }}">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="{{ site.url + page.url }}">
-    <meta name="twitter:title" content="{{ title }} – {{ site.title }}">
+    <meta name="twitter:title" content="{{ title }}">
     <meta name="twitter:description" content="{{ project['Description (css.org)'] }}">
     <meta name="twitter:image" content="{{ project['Logo'][0].url }}">
 
     <!--Schema-->
     <link rel="author" href="{{ project['Website'] }}">
     <link rel="publisher" href="{{ site.url }}">
-    <meta itemprop="name" content="{{ title }} – {{ site.title }}">
+    <meta itemprop="name" content="{{ title }}">
     <meta itemprop="description" content="{{ project['Description (css.org)'] }}">
     <meta itemprop="image" content="{{ project['Logo'][0].url }}">
 
     <!-- Facebook OpenGraph -->
     <meta property="og:url" content="{{ site.url + page.url }}">
     <meta property="og:type" content="website">
-    <meta property="og:title" content="{{ title }} – {{ site.title }}">
+    <meta property="og:title" content="{{ title }}">
     <meta property="og:image" content="{{ project['Logo'][0].url }}">
     <meta property="og:description" content="{{ project['Description (css.org)'] }}">
     <meta property="og:site_name" content="{{ site.title }}">
