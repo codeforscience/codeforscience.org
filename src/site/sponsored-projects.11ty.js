@@ -43,9 +43,9 @@ class People {
                 class="pv4 bt b--black-10 ph3 ph0-l mw7"
               >
                 <div class="black-70">
-                  <div class="flex flex-column flex-row-ns items-center">
-                    <div class="order-2 order-1-ns mb4 mb0-ns w-100 w-40-ns">
-                      ${project["Logo"] && await this.Image(project["Logo"][0].url, project['Display Name'], "db mw5-l mw4 center")}
+                  <div class="flex flex-column flex-wrap flex-row-ns items-center justify-between">
+                    <div class="order-2 order-1-ns mv3 mb0-ns w-100 w-30-ns">
+                      ${project["Logo"] && await this.Image(project["Logo"][0].url, project['Display Name'], "img db mw5-l mw4 center")}
                     </div>
                     <div class="w-100 w-60-ns pl4-l pr3-ns order-1 order-2-ns">
                       <h1 class="f4 mt0 lh-title">
@@ -54,16 +54,18 @@ class People {
                       <div class="f5 f4-l lh-copy">
                       ${project['Description (css.org)']}
                       <p>Website: <a href="${project['Website']}">${project['Website'].replace(/^https?:\/\//,'')}</a></p>
-                        <a
-                          href="/donate/${this.slug(project['Display Name'])}/"
-                          class="mt3 f5 no-underline black dim inline-flex items-center pa2 ba border-box"
-                        >
-                          Donate
-                          <svg class="w1 pl2" data-icon="chevronRight" viewBox="0 0 32 32" style="fill:currentcolor">
-                            <path d="M12 1 L26 16 L12 31 L8 27 L18 16 L8 5 z" />
-                          </svg>
-                        </a>
                       </div>
+                    </div>
+                    <div class="order-3 mb3 mb0-ns w-100">
+                      <a
+                        href="/donate/${this.slug(project['Display Name'])}/"
+                        class="mt3 f5 no-underline black dim inline-flex items-center pa2 ba border-box"
+                      >
+                        Donate
+                        <svg class="w1 pl2" data-icon="chevronRight" viewBox="0 0 32 32" style="fill:currentcolor">
+                          <path d="M12 1 L26 16 L12 31 L8 27 L18 16 L8 5 z" />
+                        </svg>
+                      </a>
                     </div>
                   </div>
                 </div>

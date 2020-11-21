@@ -10,6 +10,8 @@ codeinjection_head: '<link rel="preconnect" href="https://donorbox.org"><script 
 {% extends 'layouts/default.njk' %}
 {% set title = "Donate - " + project['Display Name'] %}
 
+{% block description %}{{project['Description (css.org)']}}{% endblock %}
+
 {% block content %}
 <section class="black-70 mw8">
   <div class="flex flex-wrap justify-between pl3 pl5-l pb3 pt3 pt5-ns">
