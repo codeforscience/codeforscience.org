@@ -2,7 +2,6 @@ const htmlmin = require("html-minifier");
 const PurgeCSS = require("purgecss").PurgeCSS;
 const csso = require("csso");
 const path = require('path');
-const postcss = require('postcss');
 
 // the file name as an entry point for postcss compilation
 // also used to define the output filename in our output /css folder.
@@ -11,19 +10,26 @@ const fileName = "styles.css";
 const cleanCSS = async (rawContent, outputPath) => {
   let content = rawContent;
   if (outputPath && outputPath.endsWith(".html")) {
-    let rawFilepath = path.join(__dirname, `../site/_includes/postcss/${fileName}`)
-    let before = await postcss([
-       // require('postcss-comment'),
-       require('precss'),
-       require('postcss-import'),
-       require('postcss-mixins'),
-       require('postcss-color-mix'),
-       require('postcss-utilities'),
-       require('autoprefixer')
-     ])
-     .process(require('fs').readFileSync(rawFilepath), { from: rawFilepath })
+    let before
 
-    before = before.css.replace(/@font-face {/g, "@font-face {font-display:swap;")
+    if (!process.env.ELEVENTY_ENV === 'production') {
+      before = require("fs").readFileSync(path.join(__dirname, `../site/_includes/postcss/${fileName}`), {
+        encoding: "utf-8",
+      });
+    } else {
+      let rawFilepath = path.join(__dirname, `../site/_includes/postcss/${fileName}`)
+      before = await require('postcss')([
+         require('postcss-import'),
+         require('precss'),
+         require('postcss-mixins'),
+         require('postcss-color-mix'),
+         require('postcss-utilities'),
+         require('autoprefixer')
+       ])
+       .process(require('fs').readFileSync(rawFilepath), { from: rawFilepath })
+       before = before.css
+    }
+    before = before.replace(/@font-face {/g, "@font-face {font-display:swap;")
 
     const purged = await new PurgeCSS().purge({
       content: [

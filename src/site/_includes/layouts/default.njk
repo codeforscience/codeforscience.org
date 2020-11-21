@@ -3,9 +3,9 @@
     <head>
         <title>
             {%- if title -%}
-                {{ title }} – {{ site.title }}
+                {{ title }} | {{ site.title }}
             {%- else -%}
-                {{ site.title }} – {{ site.description }}
+                CS&S | {{ site.title }}
             {%- endif -%}
         </title>
         <meta name="description" content="{% block description %}{{ site.description }}{% endblock %}">
