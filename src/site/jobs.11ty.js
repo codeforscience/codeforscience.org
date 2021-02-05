@@ -37,7 +37,7 @@ class Jobs {
       </div>
     </div>
     <div class="mw7-l">
-    ${Object.entries(jobs).map(([filename, job]) => {
+    ${Object.entries(jobs).reverse().map(([filename, job]) => {
       return `<article class="ph3 ph5-l pb4" id="${ filename }">
         <h3>${ job.title }</h3>
         <div class="f4 lh-copy">${this.markdown(job.description)}</div>
