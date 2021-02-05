@@ -36,7 +36,7 @@ class Jobs {
         }
       </div>
     </div>
-    <div class="">
+    <div class="mw7-l">
     ${Object.entries(jobs).map(([filename, job]) => {
       return `<article class="ph3 ph5-l pb4" id="${ filename }">
         <h3>${ job.title }</h3>
