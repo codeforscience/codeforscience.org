@@ -19,7 +19,7 @@ class Jobs {
           `<div class="f5 f4-ns fw4 measure">
             <h4>Currently Hiring:</h4>
             <ul>
-            ${Object.entries(jobs).map(([filename, job]) => {
+            ${Object.entries(jobs).reverse().map(([filename, job]) => {
               return `<li>
                 <a href="#${filename}">
                   ${ job.title }
