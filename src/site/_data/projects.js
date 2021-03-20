@@ -5,7 +5,7 @@ module.exports = async function() {
   return new Promise((resolve, reject) => {
     const projects = [];
 
-    base('Project/Program (Xero)')
+    base('Project/Program')
       .select({
         view: "Website",
       })
