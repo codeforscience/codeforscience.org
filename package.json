@@ -30,7 +30,7 @@
     "html-minifier": "^4.0.0",
     "lazysizes": "^5.2.2",
     "luxon": "^1.25.0",
-    "postcss": "^8.1.8",
+    "postcss": "^8.2.10",
     "postcss-color-mix": "^1.1.0",
     "postcss-comment": "^2.0.0",
     "postcss-import": "^13.0.0",
