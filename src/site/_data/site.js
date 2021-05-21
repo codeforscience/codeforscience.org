@@ -22,6 +22,12 @@ module.exports = async function() {
 
   if (process.env.SITE_URL) siteData.url = process.env.SITE_URL;
 
+  // FIX: this shouldn't have changed new ghost API, wtf
+  if (siteData.ghost_head && !siteData.codeinjection_head) {
+    siteData.codeinjection_head = siteData.ghost_head
+    siteData.codeinjection_foot = siteData.ghost_foot
+  }
+
   return Object.assign({
     "rootUrl" : "https://codeforscience.org",
     "buildTime" : new Date()
