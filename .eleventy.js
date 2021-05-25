@@ -4,7 +4,6 @@ const cleanCSS = require("clean-css");
 const fs = require("fs");
 const pluginRSS = require("@11ty/eleventy-plugin-rss");
 const localImages = require("eleventy-plugin-local-images");
-const lazyImages = require("eleventy-plugin-lazyimages");
 const Image = require("@11ty/eleventy-img");
 const ghostContentAPI = require("@tryghost/content-api");
 let md = require("markdown-it")({
@@ -44,7 +43,7 @@ module.exports = function(config) {
 
   if (process.env.ELEVENTY_ENV === 'production') {
     // Apply performance attributes to images
-    config.addPlugin(lazyImages, {
+    config.addPlugin(require("eleventy-plugin-lazyimages"), {
       scriptSrc: '/js/lazysizes.min.js',
       transformImgPath: (src) => {
         if (src.startsWith('/')) return `./src/public${src}`

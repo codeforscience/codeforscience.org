@@ -7,7 +7,7 @@ const api = new ghostContentAPI({
   version: "v2"
 });
 
-class People {
+class Projects {
   // or `async data() {`
   // or `get data() {`
   async data() {
@@ -104,4 +104,4 @@ class People {
   }
 }
 
-module.exports = People;
+module.exports = Projects;

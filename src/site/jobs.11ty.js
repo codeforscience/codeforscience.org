@@ -15,14 +15,14 @@ class Jobs {
         <h2 class="f2 ttu fw5 measure-narrow">
           ${ title }
         </h2>
-        ${jobs && Object.keys(jobs).length ?
+        ${jobs && jobs.length ?
           `<div class="f5 f4-ns fw4 measure">
             <h4>Currently Hiring:</h4>
             <ul>
-            ${Object.entries(jobs).reverse().map(([filename, job]) => {
+            ${jobs.reverse().map(job => {
               return `<li>
-                <a href="#${filename}">
-                  ${ job.title }
+                <a href="#${ this.slug(job['Title']) }">
+                  ${ job['Title'] }
                 </a>
               </li>`
             }).join('')}
@@ -37,12 +37,12 @@ class Jobs {
       </div>
     </div>
     <div class="mw7-l">
-    ${Object.entries(jobs).reverse().map(([filename, job]) => {
-      return `<article class="ph3 ph5-l pb4" id="${ filename }">
-        <h3>${ job.title }</h3>
-        <div class="f4 lh-copy">${this.markdown(job.description)}</div>
+    ${jobs.reverse().map((job) => {
+      return `<article class="ph3 ph5-l pb4" id="${ this.slug(job['Title']) }">
+        <h3>${ job['Title'] }</h3>
+        <div class="f4 lh-copy">${this.markdown(job['Description'])}</div>
         <a
-          href="/jobs/${ this.slug(job.title) }"
+          href="/jobs/${ this.slug(job['Title']) }"
           class="f5 no-underline black bg-animate hover-bg-black
             hover-white dib items-center pa2 ba border-box"
         >

@@ -1,11 +1,11 @@
 const Airtable = require('airtable');
-const base = new Airtable({apiKey: process.env.AIRTABLE_API_KEY}).base('appAV30OXkcrnzjbi');
+const base = new Airtable({apiKey: process.env.AIRTABLE_API_KEY}).base('appL1ht3svKYXlL4D');
 
 module.exports = async function() {
   return new Promise((resolve, reject) => {
     const projects = [];
 
-    base('Project/Program')
+    base('Projects')
       .select({
         view: "Website",
       })
