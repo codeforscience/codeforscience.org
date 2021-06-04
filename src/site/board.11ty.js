@@ -15,7 +15,6 @@ class People {
           Board of Directors
         </h3>
         ${await Promise.all(board.map(async (person) => {
-            console.log('person', person)
             return `<article class="center bg-white br3 pa2 pa3-ns mv3 ba b--black-10">
                 <div class="tc">
                   ${await this.Avatar(person['Photo'][0].url, person['Name'])}

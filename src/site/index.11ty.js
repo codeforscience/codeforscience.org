@@ -15,7 +15,8 @@ class Home {
     };
   }
 
-  async render({posts, site}) {
+  async render({posts, site, blocks}) {
+    const programs = blocks.filter((block) => block['Category'] && block['Category'].includes('Programs'))
     return `
   <div>
     <section class="flex flex-column black-70">
@@ -72,22 +73,25 @@ class Home {
           </a>
         </section>
       </div>
-      <div class="bt b--black-10 bg-lightest-blue ph3 ph5-ns">
+      <div class="bt b--black-10 bg-lightest-blue ph3 ph5-ns" id="programs">
         <div class="pv3 pb5-l mw8 center">
+          <h3 class="ph3 ph0-l f2 ttu fw5">
+            Programs
+          </h3>
           <div class="cf">
-          ${site.programs.map(program => {
+          ${programs.map((program) => {
             return `<article class="pv2 fl w-100 w-50-l pr0 pr5-l flex flex-column">
               <h5 class="f5 f4-ns fw6 mb3">
-                ${program.title}
+                ${program['Title']}
               </h5>
               <div class="f5 f4-l lh-copy measure mt0">
-                ${this.markdown(program.description)}
+                ${program['Text'] && this.markdown(program['Text'])}
               </div>
               <div><a
-                href="${program.ctaLink}"
+                href="${program['CTA Link']}"
                 class="mt3 f5 no-underline black dim inline-flex items-center pa2 ba border-box"
               >
-                ${program.ctaText}
+                ${program['CTA Text']}
                 <svg class="w1 pl2" data-icon="chevronRight" viewBox="0 0 32 32" style="fill:currentcolor">
                   <path d="M12 1 L26 16 L12 31 L8 27 L18 16 L8 5 z" />
                 </svg>
