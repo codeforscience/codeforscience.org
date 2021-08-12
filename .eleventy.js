@@ -169,6 +169,47 @@ module.exports = function(config) {
     return `<div class="image-wrapper"><picture> ${source} ${img} </picture></div>`;
   });
 
+  config.addJavaScriptFunction("ProjectImage", async (src, alt, cls) => {
+    if(alt === undefined) {
+      // You bet we throw an error on missing alt (alt="" works okay)
+      throw new Error(`Missing \`alt\` on image from: ${src}`);
+    }
+
+    let stats = await Image(src, {
+      widths: [50, 150, 300, null],
+      formats: ["jpeg", "webp"],
+      urlPath: "/img/",
+      outputDir: "./dist/img/",
+    });
+
+    let lowestSrc = stats["jpeg"][0];
+
+    const srcset = Object.keys(stats).reduce(
+      (acc, format) => ({
+        ...acc,
+        [format]: stats[format].reduce(
+          (_acc, curr) => `${_acc} ${curr.srcset} ,`,
+          ""
+        ),
+      }),
+      {}
+    );
+
+    const source = `<source type="image/webp" data-srcset="${srcset["webp"]}" >`;
+
+    const img = `<img
+      class="lazy ${cls}"
+      alt="${alt}"
+      src="${lowestSrc.url}"
+      data-src="${lowestSrc.url}"
+      data-sizes='(min-width: 1024px) 1024px, 100vw'
+      data-srcset="${srcset["jpeg"]}"
+      width="${lowestSrc.width}"
+      height="${lowestSrc.height}">`;
+
+    return `<div class="image-wrapper"><picture> ${source} ${img} </picture></div>`;
+  });
+
   config.addNunjucksAsyncShortcode("ProjectImage", async (src, alt, cls) => {
     if (!src) {
       throw new Error('No image source')
@@ -181,7 +222,7 @@ module.exports = function(config) {
     src = src.startsWith('/') ? `./src/public${src}` : src
 
     let stats = await Image(src, {
-      widths: [50, 150, 300, 500],
+      widths: [50, 150, 300, null],
       formats: ["jpeg", "webp"],
       urlPath: "/img/",
       outputDir: "./dist/img/",
