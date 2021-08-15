@@ -6,6 +6,7 @@
   },
   "mainNav": [
     {
+      "title": "Column One",
       "links": [
         {
           "title": "News",
@@ -28,6 +29,7 @@
       ]
     },
     {
+      "title": "Column Two",
       "links": [
         {
           "title": "Board of Directors",
