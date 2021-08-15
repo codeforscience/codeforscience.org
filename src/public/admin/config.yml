@@ -11,6 +11,7 @@ collections:
   # Globals
   - name: content
     label: Content
+    preview: false
     files:
       - label: 'Globals'
         name: 'globals'
@@ -34,6 +35,17 @@ collections:
             fields:
               - { label: 'Twitter', name: 'twitter', widget: 'string' }
               - { label: 'Email', name: 'email', widget: 'string' }
+          - label: "Main Navigation"
+            name: mainNav
+            widget: list
+            fields:
+              - label: Links
+                name: links
+                widget: list
+                fields:
+                  - {label: Title, name: title, widget: string}
+                  - {label: URL, name: url, widget: string}
+                  - {label: 'External', name: 'external', widget: 'boolean', hint: 'Set to external to handle external links without using the router.', required: false, default: false}
           - label: "Footer Navigation"
             name: footerNav
             widget: list
