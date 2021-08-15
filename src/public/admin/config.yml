@@ -39,6 +39,7 @@ collections:
             name: mainNav
             widget: list
             fields:
+              - {label: Title, name: title, widget: string}
               - label: Links
                 name: links
                 widget: list
