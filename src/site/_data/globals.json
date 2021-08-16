@@ -136,7 +136,9 @@
     },
     {
       "title": "Digital Infrastructure Incubator",
-      "description": "Rooted in CS&S’s work building community and pathways to sustainability for open source projects in the service of the public interest, the Digital Infrastructure Incubator holds space for projects to imagine possibility and implement strategy around sustainability, governance, and community health. The program intervenes in the [landscape of research](https://www.fordfoundation.org/campaigns/critical-digital-infrastructure-research/) on sustainability in digital infrastructure by working to bridge scholarly and policy research and open source projects in practice."
+      "description": "Rooted in CS&S’s work building community and pathways to sustainability for open source projects in the service of the public interest, the Digital Infrastructure Incubator holds space for projects to imagine possibility and implement strategy around sustainability, governance, and community health. The program intervenes in the [landscape of research](https://www.fordfoundation.org/campaigns/critical-digital-infrastructure-research/) on sustainability in digital infrastructure by working to bridge scholarly and policy research and open source projects in practice.",
+      "ctaText": "Learn more about the Incubator",
+      "ctaLink": "incubator.codeforscience.org"
     }
   ],
   "title": "Code for Science & Society",
