@@ -29,6 +29,8 @@ collections:
             fields:
               - {label: Title, name: title, widget: string}
               - { label: 'Description', name: 'description', widget: 'markdown' }
+              - {label: 'Link Text', name: ctaText, widget: string}
+              - {label: 'Link URL', name: ctaLink, widget: string}
           - label: 'Contact'
             name: 'contact'
             widget: 'object'
