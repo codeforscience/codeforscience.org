@@ -1,51 +1,8 @@
 {
-  "blogUrl": "https://blog.codeforscience.org/",
   "contact": {
     "twitter": "@codeforsociety",
-    "email": "hi@codeforsociety.org"
+    "email": "rayya@codeforsociety.org"
   },
-  "mainNav": [
-    {
-      "title": "Column One",
-      "links": [
-        {
-          "title": "News",
-          "url": "https://blog.codeforscience.org",
-          "external": true
-        },
-        {
-          "title": "Sponsored Projects",
-          "url": "/sponsored-projects"
-        },
-        {
-          "title": "Event Fund",
-          "url": "https://eventfund.codeforscience.org",
-          "external": true
-        },
-        {
-          "title": "About",
-          "url": "/about"
-        }
-      ]
-    },
-    {
-      "title": "Column Two",
-      "links": [
-        {
-          "title": "Board of Directors",
-          "url": "/board"
-        },
-        {
-          "title": "Team",
-          "url": "/staff"
-        },
-        {
-          "title": "Jobs",
-          "url": "/jobs"
-        }
-      ]
-    }
-  ],
   "footerNav": [
     {
       "title": "Resources",
@@ -113,7 +70,55 @@
       ]
     }
   ],
+  "mainNav": [
+    {
+      "title": "Column One",
+      "links": [
+        {
+          "title": "News",
+          "url": "https://blog.codeforscience.org",
+          "external": true
+        },
+        {
+          "title": "Sponsored Projects",
+          "url": "/sponsored-projects"
+        },
+        {
+          "title": "Event Fund",
+          "url": "https://eventfund.codeforscience.org",
+          "external": true
+        },
+        {
+          "title": "About",
+          "url": "/about"
+        },
+        {
+          "external": false,
+          "title": "Digital Infrastructure Incubator",
+          "url": "incubator.codeforscience.org"
+        }
+      ]
+    },
+    {
+      "title": "Column Two",
+      "links": [
+        {
+          "title": "Board of Directors",
+          "url": "/board"
+        },
+        {
+          "title": "Team",
+          "url": "/staff"
+        },
+        {
+          "title": "Jobs",
+          "url": "/jobs"
+        }
+      ]
+    }
+  ],
   "logo": "/img/Blue-logo-black-text-stacked.png",
+  "blogUrl": "https://blog.codeforscience.org/",
   "background": "/img/background.jpg",
   "tagline": "Strategic Support for Public Technology",
   "programs": [
@@ -128,9 +133,14 @@
       "description": "We bring together innovative projects committed to the public good and provide them with financial and administrative and strategic support. We support communities across domains, enabling projects to learn from each other to develop future-facing solutions that empower people. We are looking for projects that want to participate in our community, who value collaboration over competition, and who are aligned with our mission.",
       "ctaLink": "/sponsored-projects",
       "ctaText": "View Sponsored Projects"
+    },
+    {
+      "title": "Digital Infrastructure Incubator",
+      "description": "Rooted in CS&S’s work building community and pathways to sustainability for open source projects in the service of the public interest, the Digital Infrastructure Incubator holds space for projects to imagine possibility and implement strategy around sustainability, governance, and community health. The program intervenes in the [landscape of research](https://www.fordfoundation.org/campaigns/critical-digital-infrastructure-research/) on sustainability in digital infrastructure by working to bridge scholarly and policy research and open source projects in practice."
     }
   ],
   "title": "Code for Science & Society",
   "footer": " Code for Science and Society, Inc. is a registered US 501(c)(3) public charity.",
+  "description": "We are a US-based 501(c)(3) nonprofit supporting open collaboration in public interest technology through fiscal sponsorship and other programs supporting sustainable open source. We envision a future where communities build technology infrastructure that reflect their values.",
   "homeDescription": "We are a US-based 501(c)(3) nonprofit supporting open collaboration in public interest technology through fiscal sponsorship and other programs supporting sustainable open source. We envision a future where communities build technology infrastructure that reflect their values."
 }
