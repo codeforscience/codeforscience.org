@@ -6,6 +6,8 @@
 
 To update content on homepage, navigation/globals, jobs, and people, visit the CMS at https://codeforscience.org/admin/. Other pages and blog content is managed in Ghost. Project details are managed in Airtable. See details below.
 
+> Having trouble with the CMS? You can edit the data directly, its in the [_data folder](https://github.com/codeforscience/codeforscience.org/blob/live/src/site/_data/globals.json).
+
 #### Homepage
 
 * Blog posts marked **featured** in Ghost are shown on the homepage under latest news
