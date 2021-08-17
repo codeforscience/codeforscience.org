@@ -12,20 +12,24 @@ To update content on homepage, navigation/globals, jobs, and people, visit the C
 
 * Blog posts marked **featured** in Ghost are shown on the homepage under latest news
 * Other content on the homepage can be [edited in the CMS](https://codeforscience.org/admin/#/collections/content/entries/globals) under `Content > Globals`
+* This content is stored in a JSON file in [src/site/_data/globals.json](https://github.com/codeforscience/codeforscience.org/blob/live/src/site/_data/globals.json).
 
 #### Navigation
 
 * Navigation is set in the CMS
 * See below on how to add a new page
+* This content is stored in a JSON file in [src/site/_data/globals.json](https://github.com/codeforscience/codeforscience.org/blob/live/src/site/_data/globals.json).
 
 #### People
 
 * Add a new person to the [Collection: People](https://codeforscience.org/admin/#/collections/people)
 * Then they must be added to the [Content > People Page](https://codeforscience.org/admin/#/collections/content/entries/People) to be displayed
+* This content is stored in a JSON file in [src/site/_data/](https://github.com/codeforscience/codeforscience.org/tree/live/src/site/_data).
 
 #### Job
 
 * Add a new job to the [Collection: Jobs](https://codeforscience.org/admin/#/collections/jobs)
+* This content is stored in a JSON file in [src/site/_data/](https://github.com/codeforscience/codeforscience.org/tree/live/src/site/_data).
 
 #### Projects
 
