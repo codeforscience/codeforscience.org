@@ -93,9 +93,9 @@
           "external": true
         },
         {
-          "external": false,
+          "external": true,
           "title": "Digital Infrastructure Incubator",
-          "url": "incubator.codeforscience.org"
+          "url": "https://incubator.codeforscience.org"
         }
       ]
     },
