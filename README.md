@@ -6,6 +6,8 @@
 
 To update content on homepage, navigation/globals, jobs, and people, visit the CMS at https://codeforscience.org/admin/. Other pages and blog content is managed in Ghost. Project details are managed in Airtable. See details below.
 
+To add new editors to the CMS, invite them in the [identity tab](https://app.netlify.com/sites/codeforscience/identity) of the site settings in Netlify. 
+
 > Having trouble with the CMS? You can edit the data directly, its in the [_data folder](https://github.com/codeforscience/codeforscience.org/blob/live/src/site/_data/globals.json).
 
 #### Homepage
