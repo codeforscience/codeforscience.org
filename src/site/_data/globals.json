@@ -42,6 +42,11 @@
         {
           "title": "Contact",
           "url": "/contact"
+        },
+        {
+          "title": "Documentation",
+          "url": "https://codeforscience.org/docs",
+          "external": true
         }
       ]
     },
@@ -113,6 +118,11 @@
         {
           "title": "Jobs",
           "url": "/jobs"
+        },
+        {
+          "title": "Financial Statements",
+          "url": "https://codeforscience.org/docs",
+          "external": true
         }
       ]
     }
