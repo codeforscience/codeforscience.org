@@ -1,4 +1,8 @@
-# css-website
+# CS&S Website Archive
+
+This website was the CS&S website through October 2022 and this repository is now archived. We've released a new website at [codeforsociety.org](https://www.codeforsociety.org).
+
+---
 
 > Code for Science &amp; Society website
 
